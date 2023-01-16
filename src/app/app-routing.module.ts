@@ -7,9 +7,13 @@ import { ComidaComponent } from './comida/comida.component';
 import { ConcentradoComponent } from './concentrado/concentrado.component';
 import { DesayunoComponent } from './desayuno/desayuno.component';
 import { HomeComponent } from './home/home.component';
+import { TiempocomidaComponent } from './tiempocomida/tiempocomida.component';
+import { UsuarioComponent } from './usuario/usuario/usuario.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
+  {path: 'usuario', component: UsuarioComponent},
+  {path: 'tiempocomida', component: TiempocomidaComponent},
   {path: 'desayuno', component: DesayunoComponent},
   {path: 'colacion-matutina', component: ColacionmatutinaComponent},
   {path: 'comida', component: ComidaComponent},

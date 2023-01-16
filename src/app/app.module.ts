@@ -15,6 +15,8 @@ import { HomeComponent } from './home/home.component';
 import { ConcentradoComponent } from './concentrado/concentrado.component';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { TiempocomidaComponent } from './tiempocomida/tiempocomida.component';
+import { UsuarioComponent } from './usuario/usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,10 @@ import { MatSelectModule } from '@angular/material/select';
     ColacionvespertinaComponent,
     CenaComponent,
     HomeComponent,
-    ConcentradoComponent
+    ConcentradoComponent,
+    TiempocomidaComponent,
+    UsuarioComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,

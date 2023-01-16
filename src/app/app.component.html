@@ -1,6 +1,5 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
-
   <!-- Sidebar -->
   <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -14,18 +13,25 @@
     </a>
 
     <!-- Divider -->
-    <hr class="sidebar-divider my-0">
+    <hr class="sidebar-divider bg-white my-0">
 
 
 
     <!-- Divider -->
     <hr class="sidebar-divider">
 
+    <!-- Nav Item - Tables 
+    <li class="nav-item">
+      <a class="nav-link " href="/home">
+        <i class="fas fa-fw fa-home"></i>
+        <span>Log in</span></a>
+    </li>
+-->
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-      <a class="nav-link" href="/home">
+      <a class="nav-link " href="/tiempocomida">
         <i class="fas fa-fw fa-home"></i>
-        <span>Home</span></a>
+        <span>Tiempos de Comida</span></a>
     </li>
 
 
@@ -68,22 +74,76 @@
     <li class="nav-item">
       <a class="nav-link" href="/concentrado">
         <i class="fas fa-fw fa-table"></i>
-        <span>Concentrado</span></a>
+        <span>Análisis de la Ingesta</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+      <a class="nav-link" href="/concentrado">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Nombre Paciente</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+      <a class="nav-link" href="/concentrado">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Acerca de</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+      <a class="nav-link" href="/usuario">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Login</span></a>
     </li>
   </ul>
   <!-- End of Sidebar -->
 
   <!-- Content Wrapper -->
-  <div id="content-wrapper" class="d-flex flex-column">
+  <div id="content-wrapper" class="d-flex flex-column bg-white">
 
     <!-- Main Content -->
     <div id="content">
 
+      <div class="container px-4 px-lg-5">
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container px-5">
+            <a class="navbar-brand" href="#!">A N A M E X</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">Tiempos de Comida</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">Análisis de la Ingesta</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">Acerca de</a></li>
 
-      <div class="container-fluid">
+                <li class="nav-item">
+                  <a href class="nav-link" (click)="logout()">LogOut</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+
+      <div class="container-fluid bg-white">
         <router-outlet></router-outlet>
       </div>
 
+      <div class="container px-4 px-lg-5">
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+          <div class="container px-4 px-lg-5">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p>
+          </div>
+        </footer>
+      </div>
 
     </div>
     <!-- End of Main Content -->
