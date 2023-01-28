@@ -1,0 +1,30 @@
+[
+    {
+        "Id": 1,
+        "PesoBrutoRedondeado": 6.0,
+        "PesoNeto": 6.0,
+        "Agua": 9.0,
+        "Energia": 12.0,
+        "Proteina": 15.0,
+        "Lipidos": 18.0,
+        "HidratosDeCarbono": 21.0,
+        "Fibra": 24.0,
+        "VitaminaA": 27.0,
+        "AcidoAscorbico": 30.0,
+        "AcidoFolico": 33.0,
+        "Hierro": 36.0,
+        "Potasio": 39.0,
+        "IndiceGlicemico": 42.0,
+        "CargaGlicemica": 45.0,
+        "AzucarPorEquivalente": 48.0,
+        "Calcio": 51.0,
+        "Sodio": 54.0,
+        "Selenio": 57.0,
+        "Fosforo": 60.0,
+        "Colesterol": 63.0,
+        "AgSaturados": 66.0,
+        "AgMonoinsaturados": 69.0,
+        "AgPoliinsaturados": 72.0,
+        "Etanol": 75.0        
+    }
+]

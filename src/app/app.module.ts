@@ -30,7 +30,7 @@ import { UsuarioComponent } from './usuario/usuario/usuario.component';
     ConcentradoComponent,
     TiempocomidaComponent,
     UsuarioComponent,
-    UsuarioComponent
+    UsuarioComponent,
   ],
   imports: [
     BrowserModule,
