@@ -1,8 +1,10 @@
 <div>
     <!-- Tabla botón para exportar a Excel --> 
     <button (click)="exportToExcel()">Exportar a Excel</button>
-  
+
+    
     <!-- Tabla del desayuno --> 
+<div class="panel-body overflow-scroll ">
     <table id="analisisIngesta-tble">
       <caption>An&aacute;lisis de Ingesta</caption>
       <tr>
@@ -730,5 +732,9 @@
     <td>{{sumaTotal.Etanol}}</td>
   </tr>
   </table>  
-  <br>
+</div>
+<br>
+
+
+
   </div>

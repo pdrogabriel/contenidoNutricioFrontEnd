@@ -5,19 +5,34 @@
 <div class="container px-4 px-lg-5">
 	<!-- Heading Row-->
 	<div class="row gx-4 gx-lg-5 align-items-center my-5">
-		<div class="col-lg-6">
-			<img class="img-fluid rounded mb-4 mb-lg-0" src="../../assets/images/unsis-logo.png" alt="..." />
-			<p>ANAMEX</p>
-			<p>Herramienta de nutricional de alimentos mexicanos</p>
+		<div class="col-lg-14">
+			<h1>ANAMEX</h1> 
+            <br>
+            <p>Ingrese el nombre del paciente, se recomienda incluir los apellidos.</p>
+            <p>Este nombre no se registrar&aacute; en la plataforma, solo se incluir&aacute; en el an&aacute;lisis de ingesta final, as&iacute; como en el archivo que se exporte de este an&aacute;lisis.</p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                    <div class="col-8">
+                        <div class="form-outline">
+                          <input type="text"  id="idInputNombrePaciente"  placeholder="Nombre del paciente" class="form-control" />
+                        </div>
+                      </div>
+                      <!-- Botón que captura el nombre del paciente --> 
+                      <div class="col-4">
+                        <div class="form-outline">
+                          <input type="button"  id="idBotonNombrePaciente" value="Enviar" class="form-control btn btn-success" /> 
+                        </div>
+                      </div>
+                </li>
+              </ul>	
 		</div>		
 	</div>
 </div>
 
 
-
     <!-- Call to Action-->
-    <div class="card text-white bg-secondary my-5 py-4 text-center">
-        <div class="card-body"><p class="text-white m-0 display-1">Tiempos de comidas</p></div>
+    <div class="card text-white bg-secondary my-5 py-1 text-center" style="height: 6rem;">
+        <div class="card-body"><p class="text-white m-0 display-4">Tiempos de comidas</p></div>
     </div>
     <hr class="sidebar-divider">
     <!-- Content Row-->
@@ -25,28 +40,31 @@
         <div class="col-md-4 mb-5">
             <div class="card h-100">
                 <div class="card-body">
+                    <img class="img-fluid rounded float-left" width="35"  height="35" src="../../assets/images/desayuno.png" alt="..." />
                     <h2 class="card-title">Desayuno</h2>
-                    <p class="card-text">La primera comida fuerte del día. Por ejemplo: enfrijoladas.</p>
+                    <p class="card-text">La primera comida fuerte del d&iacute;a. Por ejemplo: enfrijoladas.</p>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Continuar</a></div>
             </div>
         </div>
         <div class="col-md-4 mb-5">
             <div class="card h-100">
                 <div class="card-body">
-                    <h2 class="card-title">Colación matutina</h2>
+                    <img class="img-fluid rounded float-left" width="35"  height="35" src="../../assets/images/colacionMatutina.png" alt="..." />
+                    <h2 class="card-title">Colaci&oacute;n matutina</h2>
                     <p class="card-text">Un alimento o alimentos ligeros entre el desayuno y la comida o antes del desayuno fuerte. Por ejemplo: un yogurth.</p>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Continuar</a></div>
             </div>
         </div>
         <div class="col-md-4 mb-5">
             <div class="card h-100">
                 <div class="card-body">
+                    <img class="img-fluid rounded float-left" width="35"  height="35" src="../../assets/images/comida.png" alt="..." />
                     <h2 class="card-title">Comida</h2>
-                    <p class="card-text">Un alimento o alimentos ligeros entre la comida y la cena. Por ejemplo: un pan o fruta.</p>
+                    <p class="card-text">Los platos de comida a mitad del d&iacute;a. Entre desayuno y cena. Por ejemplo: filete de res con frijoles, arroz y tortillas. Con agua de lim&oacute;n.</p>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Continuar</a></div>
             </div>
         </div>
     </div>
@@ -55,28 +73,31 @@
         <div class="col-md-4 mb-5">
             <div class="card h-100">
                 <div class="card-body">
-                    <h2 class="card-title">Colación vespertina</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                    <img class="img-fluid rounded float-left" width="35"  height="35" src="../../assets/images/colacionVespertina.png" alt="..." />
+                    <h2 class="card-title">Colaci&oacute;n vespertina</h2>
+                    <p class="card-text">Un alimento o alimentos ligeros entre la comida y la cena. Por ejemplo: un pan o fruta.</p>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Continuar</a></div>
             </div>
         </div>
         <div class="col-md-4 mb-5">
             <div class="card h-100">
                 <div class="card-body">
+                    <img class="img-fluid rounded float-left" width="35"  height="35" src="../../assets/images/cena.png" alt="..." />
                     <h2 class="card-title">Cena</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
+                    <p class="card-text">Los &uacute;ltimos alimentos que consume antes de irse a dormir. Por ejemplo: una torta de tasajo.</p>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Continuar</a></div>
             </div>
         </div>
         <div class="col-md-4 mb-5">
             <div class="card h-100">
                 <div class="card-body">
-                    <h2 class="card-title">Análisis de la Ingesta</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                    <img class="img-fluid rounded float-left" width="35"  height="35" src="../../assets/images/analisisIngesta.png" alt="..." />
+                    <h2 class="card-title">An&aacute;lisis de la ingesta</h2>
+                    <p class="card-text">Contenido de energ&iacute;a y nutrientes (macro y micro) del consumo por tiempo de comidas y total del d&iacute;a.</p>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Continuar</a></div>
             </div>
         </div>
     </div>
