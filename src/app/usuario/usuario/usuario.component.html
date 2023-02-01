@@ -20,7 +20,8 @@
                                     <div class="card-body py-5 px-md-5">
                                         <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()"
                                             #f="ngForm" novalidate>
-                                            <h3>Crea tu cuenta es gratuita</h3>
+                                            <h2>Registro</h2>
+                                            <h4>Ingresa los datos solicitados en breve se te notificar&aacute; v&iacute;a corre electr&oacute;nico el resultado del registro</h4>
                                             <!-- Nombre input -->
                                             <div class="form-outline mb-4">
                                                 <input type="text" [(ngModel)]="form.username" id="nombre" name="nombre"
@@ -39,11 +40,65 @@
                                                 </div>
                                             </div>
 
+                                            <!-- Apellido paterno input -->
+                                            <div class="form-outline mb-4">
+                                                <input type="text" [(ngModel)]="form.username" id="apellidoPaterno" name="apellidoPaterno"
+                                                    class="form-control" required minlength="3" maxlength="20"
+                                                    #username="ngModel" placeholder="Apellido paterno" />
+                                            </div>
+
+                                            <div class="alert-danger" *ngIf="username.errors && f.submitted">
+                                                <div *ngIf="username.errors['required']">Apellido paterno requerido
+                                                </div>
+                                                <div *ngIf="username.errors['minlength']">
+                                                    Apellido paterno mayor a 3 caracteres
+                                                </div>
+                                                <div *ngIf="username.errors['maxlength']">
+                                                    Apellido paterno no mayor de 20 caracteres
+                                                </div>
+                                            </div>
+
+                                        <!-- Apellido materno input -->
+                                            <div class="form-outline mb-4">
+                                                <input type="text" [(ngModel)]="form.username" id="apellidoMaterno" name="apellidoMaterno"
+                                                class="form-control" required minlength="3" maxlength="20"
+                                                #username="ngModel" placeholder="Apellido materno" />
+                                            </div>
+
+                                            <div class="alert-danger" *ngIf="username.errors && f.submitted">
+                                                <div *ngIf="username.errors['required']">Apellido materno requerido
+                                            </div>
+                                            <div *ngIf="username.errors['minlength']">
+                                                Apellido materno mayor a 3 caracteres
+                                            </div>
+                                            <div *ngIf="username.errors['maxlength']">
+                                                Apellido materno no mayor de 20 caracteres
+                                            </div>
+                                        </div>
+
+                                        <!-- Institucion input -->
+                                        <div class="form-outline mb-4">
+                                            <input type="text" [(ngModel)]="form.username" id="institucion" name="institucion"
+                                            class="form-control" required minlength="3" maxlength="50"
+                                            #username="ngModel" placeholder="Instituci&oacute;n" />
+                                            </div>
+
+                                        <div class="alert-danger" *ngIf="username.errors && f.submitted">
+                                        <div *ngIf="username.errors['required']">Instituci&oacute;n requerida
+                                        </div>
+                                        <div *ngIf="username.errors['minlength']">
+                                        Instituci&oacute;n mayor a 3 caracteres
+                                        </div>
+                                        <div *ngIf="username.errors['maxlength']">
+                                        Instituci&oacute;n no mayor de 50 caracteres
+                                        </div>
+                                    </div>
+
                                             <!-- Email input -->
                                             <div class="form-outline mb-4">
                                                 <input type="email" [(ngModel)]="form.email" id="correo" name="correo"
                                                     class="form-control" required email #email="ngModel"
-                                                    placeholder="Dirección de correo electrónico" />
+                                                    placeholder="Dirección de correo electr&oacute;nico" />
                                             </div>
 
                                             <div class="alert-danger" *ngIf="email.errors && f.submitted">
@@ -78,7 +133,7 @@
 
                                             <!-- Submit button -->
                                             <button class="btn btn-primary btn-block mb-4">
-                                                Crear cuenta
+                                                Enviar
                                             </button>
 
 
@@ -91,7 +146,7 @@
                                             <p>¿Ya tienes una cuenta? <a href="/" class="link-info">Entrar</a></p>
                                         </form>
                                         <div class="alert alert-success" *ngIf="isSuccessful">
-                                            Usuario registrado con éxito!
+                                            Informaci&oacute; enviada
                                           </div>
                                     </div>
                                 </div>
