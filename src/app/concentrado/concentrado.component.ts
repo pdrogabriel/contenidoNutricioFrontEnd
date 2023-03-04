@@ -324,6 +324,14 @@ interface SUMACENA {
 })
 export class ConcentradoComponent implements OnInit {
 
+  public nameFile: string;
+
+  //Let DesayunoTabla = JSON.parse(localStorage.getItem('DesayunoTabla'));
+
+  //this.nameFile = (localStorage.getItem('nombreArchivo')||"analisisIngesta.xlsx");
+
+
+
   //Desayuno
   Desayuno: DESAYUNO[] = DesayunoJson;
 
@@ -356,7 +364,8 @@ export class ConcentradoComponent implements OnInit {
 
    //Declaración del constructor
   constructor() { 
-    console.log(this.Desayuno);
+    //console.log(this.nameFile);
+  //  console.log(this.Desayuno);
     console.log(this.SumaDesayuno);
     console.log(this.ColacionMatutina);
     console.log(this.SumaColacionMatutina);
@@ -401,6 +410,9 @@ SUMATOTAL = [
 
   ngOnInit(): void 
   {
+   
+ // 
+    
 
 this.SUMATOTAL[0].PesoBrutoRedondeado=this.SumaDesayuno[0].PesoBrutoRedondeado.valueOf()+
 this.SumaColacionMatutina[0].PesoBrutoRedondeado.valueOf()+this.SumaComida[0].PesoBrutoRedondeado.valueOf()+
@@ -506,15 +518,16 @@ this.SumaColacionVespertina[0].Etanol.valueOf()+this.SumaCena[0].Etanol.valueOf(
 
 
   //Importar a Excel
-  name = 'ExcelSheet.xlsx';
   exportToExcel(): void {
+    this.nameFile = 'analisisIngesta.xlsx';
+    if ("nombreArchivo" in sessionStorage) {
+      this.nameFile = (sessionStorage.getItem('nombreArchivo')||"analisisIngesta.xlsx");
+  } 
     let element = document.getElementById('analisisIngesta-tble');
     const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
-
     const book: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
-
-    XLSX.writeFile(book, this.name);
+    XLSX.writeFile(book, this.nameFile);
   }
 
 

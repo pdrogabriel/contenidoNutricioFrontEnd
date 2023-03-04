@@ -9,22 +9,30 @@ export class TiempocomidaComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  
+  ngOnInit(): void {   }
+
+  exportaIdentificadorPaciente(): void {
+     
+    let IdentificadorPaciente="";
+    let element =document.querySelector('input')?.value;
+
+   if (element === '') {
+    IdentificadorPaciente="analisisIngesta.xlsx";
+  }else{
+    let nombreLimpio;
+    // replace() usando una expresión Regex para reemplazar espacios en blanco
+      nombreLimpio = element+"";
+      nombreLimpio= nombreLimpio.replace(/\s+/g, '');
+      nombreLimpio= nombreLimpio.replace('á', 'a');
+      nombreLimpio= nombreLimpio.replace('é', 'e');
+      nombreLimpio= nombreLimpio.replace('í', 'i');
+      nombreLimpio= nombreLimpio.replace('ó', 'o');
+      nombreLimpio= nombreLimpio.replace('ú', 'u');
+      nombreLimpio= nombreLimpio.replace('ñ', 'n');
+      IdentificadorPaciente=JSON.stringify(nombreLimpio)+".xlsx"; 
   }
-
-  name = 'identificadorPaciente.json';
-  exportName(): void {
-    let element = document.getElementById('idInputIdentificaPaciente');
-    //String IdentificadorPAciente="";
-
-
-    //const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
-
-    //const book: XLSX.WorkBook = XLSX.utils.book_new();
-    //XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
-
-    //XLSX.writeFile(book, this.name);
+//alert(IdentificadorPaciente);
+  // Se envía al almacenamiento local
+  sessionStorage.setItem("nombreArchivo",IdentificadorPaciente);
   }
-
 }

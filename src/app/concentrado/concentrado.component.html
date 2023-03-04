@@ -1,7 +1,10 @@
 <div>
-    <!-- Tabla botón para exportar a Excel --> 
-    <button (click)="exportToExcel()">Exportar a Excel</button>
-
+    <!-- Botón para exportar a Excel --> 
+    <!-- <button (click)="exportToExcel()">Exportar a Excel</button>--> 
+    
+    <div class="form-outline">
+    <input type="button" (click)="exportToExcel()" id="idBotonExportaExcel" value="Exportar a Excel" class="form-control btn btn-success" style='width:200px; height:50px'/> 
+    </div>
     
     <!-- Tabla del desayuno --> 
 <div class="panel-body overflow-scroll ">

@@ -17,4 +17,12 @@ export class AppComponent {
     this.tokenStorageService.signOut();
     window.location.reload();
   }
+
+// Datos de la sesión
+saveData() {
+    sessionStorage.setItem('name', 'Rana Hasnain');
+}
+
+
+
 }

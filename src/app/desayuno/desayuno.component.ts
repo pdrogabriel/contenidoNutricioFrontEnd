@@ -9,11 +9,13 @@ import { AlimentoNutriente } from '../clases/alimento-nutriente';
   templateUrl: './desayuno.component.html',
   styleUrls: ['./desayuno.component.css']
 })
+
 export class DesayunoComponent implements OnInit {
   grupoAlimentos: GrupoAlimento[] = [];
   alimentos: Alimento[] = [];
   alimentoNutrientes: AlimentoNutriente[] = [];
   alimentoNutrientesTabla: AlimentoNutriente[][] = [];
+  alimentoSumaTabla: AlimentoNutriente[][] = [];
   alimentosTemporal: Alimento = new Alimento();
   selectedDesayuno: string = '';
   selectedIdAlimento: Number = 0;
@@ -25,7 +27,8 @@ export class DesayunoComponent implements OnInit {
 
 
   nombreAlimentoArray: String[] = []
-  
+  tipoUnidadArray: String[] = []
+
 
 
   constructor(private grupoAlimentoService: GrupoAlimentoService) { }
@@ -104,19 +107,46 @@ export class DesayunoComponent implements OnInit {
 
   calcularNutriente() {
     for(let x=0;x<this.alimentoNutrientes.length;x++){
-      this.alimentoNutrientes[x].cantidad *= this.proporcion;
+      //this.alimentoNutrientes[x].cantidad *= this.proporcion;
+      this.alimentoNutrientes[x].cantidad=(this.alimentoNutrientes[x].cantidad*this.proporcion)/Number(this.cantidad);
     }
   }
 
-  agregarAlimentoNutrientesTabla(){
-
+  agregarAlimentoNutrientesTabla(){   
     if(this.alimentoNutrientesTabla.length == 0){
       this.alimentoNutrientesTabla[0] = this.alimentoNutrientes;
       this.nombreAlimentoArray[0] = this.alimentosTemporal.nombre;
-    }else{
+      this.tipoUnidadArray[0] = this.unidad;
+      
+    }else{  
       this.alimentoNutrientesTabla[this.alimentoNutrientesTabla.length + 1] = this.alimentoNutrientes;
       this.nombreAlimentoArray[this.nombreAlimentoArray.length + 1] = this.alimentosTemporal.nombre;
+      this.tipoUnidadArray[this.tipoUnidadArray.length + 1] = this.unidad;
+    }   
+
+    for (let i=0; i < this.alimentoNutrientes.length; i++)
+    {
+      this.alimentoSumaTabla[0][i].cantidad=0;
     }
+    
+
   }
+
+  almacenarTablaMenu()
+  {
+    alert(this.nombreAlimentoArray[0]+" | "+this.unidad+" | "+this.alimentoNutrientesTabla[0][0].cantidad+" | "+this.alimentoNutrientesTabla[0][1].cantidad+" | "+this.alimentoNutrientesTabla[0][2].cantidad);
+
+
+
+
+
+
+
+
+
+  }
+
+
+ 
 
 }
