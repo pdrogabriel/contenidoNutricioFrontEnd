@@ -31,8 +31,8 @@ export class TiempocomidaComponent implements OnInit {
       nombreLimpio= nombreLimpio.replace('ñ', 'n');
       IdentificadorPaciente=JSON.stringify(nombreLimpio)+".xlsx"; 
   }
-//alert(IdentificadorPaciente);
   // Se envía al almacenamiento local
   sessionStorage.setItem("nombreArchivo",IdentificadorPaciente);
+  alert("Identificador del paciente registrado");
   }
 }

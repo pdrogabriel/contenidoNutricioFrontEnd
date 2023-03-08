@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import * as XLSX from 'xlsx';
-import DesayunoJson from 'src/app/json/desayuno.json';
+
+import { GrupoAlimentoService } from '../services/grupo-alimento.service';
+import { GrupoAlimento } from '../clases/grupo-alimento';
+import { Alimento } from '../clases/alimento';
+import { AlimentoNutriente } from '../clases/alimento-nutriente';
+
+
+
 import SumaDesayunoJson from 'src/app/json/sumaDesayuno.json';
 import ColacionMatutinaJson from 'src/app/json/colacionMatutina.json';
 import SumaColacionMatutinaJson from 'src/app/json/sumaColacionMatutina.json';
@@ -11,37 +18,6 @@ import SumaColacionVespertinaJson from 'src/app/json/sumaColacionVespertina.json
 import CenaJson from 'src/app/json/cena.json';
 import SumaCenaJson from 'src/app/json/sumaCena.json';
 
-// Esta es la interface del Desayuno
-interface DESAYUNO {
-  Alimento: String;
-  CantidadSugerida: Number;
-  Unidad: String;
-  PesoBrutoRedondeado: Number;
-  PesoNeto: Number;
-  Agua: Number; 
-  Energia: Number;
-  Proteina: Number;
-  Lipidos: Number;
-  HidratosDeCarbono: Number;
-  Fibra: Number;
-  VitaminaA: Number;
-  AcidoAscorbico: Number;
-  AcidoFolico: Number;
-  Hierro: Number;
-  Potasio: Number;
-  IndiceGlicemico: Number;
-  CargaGlicemica: Number;
-  AzucarPorEquivalente: Number;
-  Calcio: Number;
-  Sodio: Number;
-  Selenio: Number;
-  Fosforo: Number;
-  Colesterol: Number;
-  AgSaturados: Number;
-  AgMonoinsaturados: Number;
-  AgPoliinsaturados: Number;
-  Etanol: Number;
-}
 
 // Esta es la interface de la Suma del Desayuno
 interface SUMADESAYUNO {
@@ -324,7 +300,18 @@ interface SUMACENA {
 })
 export class ConcentradoComponent implements OnInit {
 
+  //nombre del archivo
   public nameFile: string;
+
+  //Arreglos del desayuno
+  nombreAlimentoDesayunoArray: String[] = []
+  unidadAlimentoDesayunoArray: String[] = []
+  cantidadAlimentoDesayunoArray: Number[] = []
+  //Tabla del desayuno
+  desayunoTabla: AlimentoNutriente[][] = [];
+  //Tabla del desayuno
+  desayunoSumaTabla: AlimentoNutriente[] = [];
+
 
   //Let DesayunoTabla = JSON.parse(localStorage.getItem('DesayunoTabla'));
 
@@ -333,7 +320,7 @@ export class ConcentradoComponent implements OnInit {
 
 
   //Desayuno
-  Desayuno: DESAYUNO[] = DesayunoJson;
+  //Desayuno: DESAYUNO[] =  sessionStorage.getItem("arrayDesaunoNombre");
 
    //Suma del Desayuno
    SumaDesayuno: SUMADESAYUNO[] = SumaDesayunoJson;
@@ -410,8 +397,21 @@ SUMATOTAL = [
 
   ngOnInit(): void 
   {
+    //Desayun y su suma
+      this.nombreAlimentoDesayunoArray=JSON.parse(sessionStorage.getItem("arrayDesayunoNombre")||"");
+      this.unidadAlimentoDesayunoArray=JSON.parse(sessionStorage.getItem("arrayDesyaunoUnidad")||"");
+      this.cantidadAlimentoDesayunoArray=JSON.parse(sessionStorage.getItem("arrayDesayunoCantidad")||"");   
+      this.desayunoTabla=JSON.parse(sessionStorage.getItem("menuTableDesayuno")||"");
+      this.desayunoSumaTabla=JSON.parse(sessionStorage.getItem("sumaTableDesayuno")||"");
+    
+
+  
+
+
+
    
- // 
+
+
     
 
 this.SUMATOTAL[0].PesoBrutoRedondeado=this.SumaDesayuno[0].PesoBrutoRedondeado.valueOf()+

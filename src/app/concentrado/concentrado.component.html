@@ -1,7 +1,6 @@
+<br>
 <div>
-    <!-- Botón para exportar a Excel --> 
-    <!-- <button (click)="exportToExcel()">Exportar a Excel</button>--> 
-    
+    <!-- Botón para exportar a Excel -->  
     <div class="form-outline">
     <input type="button" (click)="exportToExcel()" id="idBotonExportaExcel" value="Exportar a Excel" class="form-control btn btn-success" style='width:200px; height:50px'/> 
     </div>
@@ -15,8 +14,8 @@
       </tr>
       <tr>
         <th class="nutriente">Alimento</th>
-        <th class="nutriente">Cantidad sugerida</th>
         <th class="nutriente">Unidad</th>
+        <th class="nutriente">Cantidad sugerida</th>
         <th class="nutriente">Peso bruto redondeado (g)</th>
         <th class="nutriente">Peso neto (g)</th>
         <th class="nutriente">Agua (ml)</th>
@@ -44,37 +43,14 @@
         <th class="nutriente">Etanol (g)</th>
   </tr>
   <!-- Aca llenamos la tabla de desayuno --> 
-  <tr *ngFor="let desayuno of Desayuno">
-    <td>{{desayuno.Alimento}}</td>
-    <td>{{desayuno.CantidadSugerida}}</td>
-    <td>{{desayuno.Unidad}}</td>
-    <td>{{desayuno.PesoBrutoRedondeado}}</td>
-    <td>{{desayuno.PesoNeto}}</td>
-    <td>{{desayuno.Agua}}</td>
-    <td>{{desayuno.Energia}}</td>
-    <td>{{desayuno.Proteina}}</td>
-    <td>{{desayuno.Lipidos}}</td>
-    <td>{{desayuno.HidratosDeCarbono}}</td>
-    <td>{{desayuno.Fibra}}</td>
-    <td>{{desayuno.VitaminaA}}</td>
-    <td>{{desayuno.AcidoAscorbico}}</td>
-    <td>{{desayuno.AcidoFolico}}</td>
-    <td>{{desayuno.Hierro}}</td>
-    <td>{{desayuno.Potasio}}</td>
-    <td>{{desayuno.IndiceGlicemico}}</td>
-    <td>{{desayuno.CargaGlicemica}}</td>
-    <td>{{desayuno.AzucarPorEquivalente}}</td>
-    <td>{{desayuno.Calcio}}</td>
-    <td>{{desayuno.Sodio}}</td>
-    <td>{{desayuno.Selenio}}</td>
-    <td>{{desayuno.Fosforo}}</td>
-    <td>{{desayuno.Colesterol}}</td>
-    <td>{{desayuno.AgSaturados}}</td>
-    <td>{{desayuno.AgMonoinsaturados}}</td>
-    <td>{{desayuno.AgPoliinsaturados}}</td>
-    <td>{{desayuno.Etanol}}</td>  
-  </tr>
-  
+  <tr *ngFor="let alimentoNutrienteArray of desayunoTabla; let i = index ">  
+    <td>{{nombreAlimentoDesayunoArray[i]}}</td>
+    <td>{{unidadAlimentoDesayunoArray[i]}}</td>
+    <td>{{cantidadAlimentoDesayunoArray[i]}}</td>
+    <td *ngFor="let alimentoNutriente of alimentoNutrienteArray ">  
+        {{alimentoNutriente.cantidad}}     
+    </td>     
+  </tr>  
     <!-- Seccion de la suma del desayuno --> 
     <tr>
       <th class="suma" colspan="28">Suma preliminar del desayuno</th>
@@ -110,36 +86,13 @@
         <th class="nutriente">Etanol (g)</th>            
   </tr>
   <!-- Aca llenamos la suma del desayuno --> 
-  <tr *ngFor="let sumaDesayuno of SumaDesayuno">
+  <tr>  
     <td></td>
     <td></td>
     <td></td>
-    <td>{{sumaDesayuno.PesoBrutoRedondeado}}</td>
-    <td>{{sumaDesayuno.PesoNeto}}</td>
-    <td>{{sumaDesayuno.Agua}}</td>
-    <td>{{sumaDesayuno.Energia}}</td>
-    <td>{{sumaDesayuno.Proteina}}</td>
-    <td>{{sumaDesayuno.Lipidos}}</td>
-    <td>{{sumaDesayuno.HidratosDeCarbono}}</td>
-    <td>{{sumaDesayuno.Fibra}}</td>
-    <td>{{sumaDesayuno.VitaminaA}}</td>
-    <td>{{sumaDesayuno.AcidoAscorbico}}</td>
-    <td>{{sumaDesayuno.AcidoFolico}}</td>
-    <td>{{sumaDesayuno.Hierro}}</td>
-    <td>{{sumaDesayuno.Potasio}}</td>
-    <td>{{sumaDesayuno.IndiceGlicemico}}</td>
-    <td>{{sumaDesayuno.CargaGlicemica}}</td>
-    <td>{{sumaDesayuno.AzucarPorEquivalente}}</td>
-    <td>{{sumaDesayuno.Calcio}}</td>
-    <td>{{sumaDesayuno.Sodio}}</td>
-    <td>{{sumaDesayuno.Selenio}}</td>
-    <td>{{sumaDesayuno.Fosforo}}</td>
-    <td>{{sumaDesayuno.Colesterol}}</td>
-    <td>{{sumaDesayuno.AgSaturados}}</td>
-    <td>{{sumaDesayuno.AgMonoinsaturados}}</td>
-    <td>{{sumaDesayuno.AgPoliinsaturados}}</td>
-    <td>{{sumaDesayuno.Etanol}}</td>
-  </tr>
+    <td *ngFor="let alimentoNutriente of desayunoSumaTabla; let i = index ">
+      {{desayunoSumaTabla[i].cantidad}}</td>
+</tr> 
  
     <!-- Seccion de la colacion matutina -->
     <tr>
