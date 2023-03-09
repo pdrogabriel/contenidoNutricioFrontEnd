@@ -310,7 +310,7 @@ export class ConcentradoComponent implements OnInit {
   //Tabla del desayuno
   desayunoTabla: AlimentoNutriente[][] = [];
   //Tabla del desayuno
-  desayunoSumaTabla: AlimentoNutriente[] = [];
+  desayunoSumaTabla: Number[] = [];
 
 
   //Let DesayunoTabla = JSON.parse(localStorage.getItem('DesayunoTabla'));
@@ -399,7 +399,7 @@ SUMATOTAL = [
   {
     //Desayun y su suma
       this.nombreAlimentoDesayunoArray=JSON.parse(sessionStorage.getItem("arrayDesayunoNombre")||"");
-      this.unidadAlimentoDesayunoArray=JSON.parse(sessionStorage.getItem("arrayDesyaunoUnidad")||"");
+      this.unidadAlimentoDesayunoArray=JSON.parse(sessionStorage.getItem("arrayDesayunoUnidad")||"");
       this.cantidadAlimentoDesayunoArray=JSON.parse(sessionStorage.getItem("arrayDesayunoCantidad")||"");   
       this.desayunoTabla=JSON.parse(sessionStorage.getItem("menuTableDesayuno")||"");
       this.desayunoSumaTabla=JSON.parse(sessionStorage.getItem("sumaTableDesayuno")||"");

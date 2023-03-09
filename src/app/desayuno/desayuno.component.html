@@ -115,7 +115,7 @@
                           {{alimentoNutriente.cantidad}}     
                       </td>     
                     </tr>  
-                  </tbody><br>  
+                  </tbody><br> 
               </table>  
           </div>  
 <br>
@@ -151,10 +151,9 @@
                   <th>AG poliinsaturados (g)</th>
                   <th>Etanol (g)</th>
             </tr>
-            <!-- <tr *ngFor="let alimentoNutrienteArray of alimentoSumaTabla; let i = index "> --> 
             <tr>  
-                <td *ngFor="let alimentoNutriente of alimentoSumaTabla; let i = index ">
-                  {{alimentoSumaTabla[i].cantidad}}</td>
+                <td *ngFor="let alimentoNutriente of sumaMenuTotal; let i = index ">
+                  {{sumaMenuTotal[i]}}</td>
             </tr>  
           </thead>  
         </table>
