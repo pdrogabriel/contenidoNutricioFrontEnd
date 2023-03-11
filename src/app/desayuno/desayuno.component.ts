@@ -23,7 +23,7 @@ export class DesayunoComponent implements OnInit {
 
   cantidad: Number = 0;
   unidad: String ='';
-  proporcion: number = 1;
+  proporcion: number = 0;
 
 
   nombreAlimentoArray: String[] = []
@@ -89,11 +89,13 @@ export class DesayunoComponent implements OnInit {
           this.alimentosTemporal = data;
           this.cantidad = this.alimentosTemporal.cantidad;
           this.unidad = this.alimentosTemporal.unidad.tipo;
+          this.proporcion=Number(this.cantidad);
         },
         error => {
           console.log(error);
         }
       )
+      
   }
 
   obtenerAlimentoNutrientes(idAlimento: Number): void {
@@ -108,38 +110,61 @@ export class DesayunoComponent implements OnInit {
           console.log(error);
         }
       )
-    for (let i=0;i<this.alimentoNutrientes.length;i++)
-    {
-      this.alimentoNutrientesOriginal[i]=this.alimentoNutrientes[i].cantidad;
-      alert(":p -> "+this.alimentoNutrientesOriginal[i]);
-    }
+      
+    //for (let i=0;i<this.alimentoNutrientes.length;i++)
+    //{
+      //alert(":p -> ");
+      //this.alimentoNutrientesOriginal[i]=this.alimentoNutrientes[i].cantidad;
+      //alert(":p -> "+this.alimentoNutrientesOriginal[i]);
+    //}
   }
 
   calcularNutriente() {
-    for(let x=0;x<this.alimentoNutrientes.length;x++){
-      //this.alimentoNutrientes[x].cantidad = this.alimentoNutrientesOriginal[x].cantidad*this.proporcion;
-     // this.alimentoNutrientes[x].cantidad=(this.alimentoNutrientes[x].cantidad*this.proporcion)/Number(this.cantidad);
+    for(let x=0;x<this.alimentoNutrientes.length;x++){      
+      this.alimentoNutrientes[x].cantidad=(this.alimentoNutrientes[x].cantidad*this.proporcion)/Number(this.cantidad);
+      //alert(this.alimentoNutrientes[x].cantidad);
     }
   }
 
   restableceNutrientes() {
+    this.proporcion=Number(this.cantidad);
     for(let x=0;x<this.alimentoNutrientes.length;x++){
+      this.alimentoNutrientes[x].cantidad=(this.alimentoNutrientes[x].cantidad*Number(this.cantidad))/Number(this.proporcion);
       //alert(":p "+this.alimentoNutrientesOriginal[x].cantidad);
      // this.alimentoNutrientes[x].cantidad = this.alimentoNutrientesOriginal[x].cantidad;
      //this.alimentoNutrientes[x].cantidad = this.alimentoNutrientesOriginal[x];
-     this.alimentoNutrientes[x].cantidad = 0
+     //this.alimentoNutrientes[x].cantidad = 0
      // this.alimentoNutrientes[x].cantidad=(this.alimentoNutrientes[x].cantidad*this.proporcion)/Number(this.cantidad);
+    }
+  }
+
+  limpiarNutrientes() {
+    for(let x=0;x<this.alimentoNutrientes.length;x++){
+     this.alimentoNutrientes[x].cantidad = 0
     }
   }
 
 
 
-  agregarAlimentoNutrientesTabla(){   
-    if(this.alimentoNutrientesTabla.length == 0){ 
+  agregarAlimentoNutrientesTabla(){  
+    
+    if (this.proporcion==0)
+    {
+      alert("Agregue un nuevo alimento");
+    }
+    else
+    {
+      if(this.alimentoNutrientesTabla.length == 0)
+    { 
+      //Se agrega el nombre del alimento
       this.nombreAlimentoArray[0] = this.alimentosTemporal.nombre;
+      //Se agrega la unidad del alimento
       this.tipoUnidadArray[0] = this.unidad;
-      this.cantidadAlimentoArray[0] = Number(this.cantidad);
+      //Se agrega la cantidad del alimento
+      this.cantidadAlimentoArray[0] = Number(this.proporcion);
+      //Se agregan los nutriente del alimento
       this.alimentoNutrientesTabla[0] = this.alimentoNutrientes;
+      //Se actualiza la suma
       for(let i=0;i<this.alimentoNutrientes.length;i++)
       {
         this.sumaMenuTotal[i]=this.alimentoNutrientes[i].cantidad;
@@ -148,11 +173,13 @@ export class DesayunoComponent implements OnInit {
       this.alimentoNutrientesTabla[this.alimentoNutrientesTabla.length] = this.alimentoNutrientes;
       this.nombreAlimentoArray[this.nombreAlimentoArray.length] = this.alimentosTemporal.nombre;
       this.tipoUnidadArray[this.tipoUnidadArray.length] = this.unidad;
-      this.cantidadAlimentoArray[this.cantidadAlimentoArray.length] = Number(this.cantidad);
+      this.cantidadAlimentoArray[this.cantidadAlimentoArray.length] = Number(this.proporcion);
       for(let j=0;j<this.alimentoNutrientes.length;j++){
         this.sumaMenuTotal[j]+=Number(this.alimentoNutrientes[j].cantidad);
        }
     }  
+    this.proporcion=0;
+    }
   }
 
   limpiarTabla()
@@ -205,29 +232,17 @@ export class DesayunoComponent implements OnInit {
     if (this.alimentoNutrientesTabla.length!=0)
     {
       sessionStorage.setItem("arrayDesayunoNombre",JSON.stringify((this.nombreAlimentoArray)));
-    sessionStorage.setItem("arrayDesayunoUnidad",JSON.stringify((this.tipoUnidadArray)));
-    sessionStorage.setItem("arrayDesayunoCantidad",JSON.stringify((this.cantidadAlimentoArray)));
-    sessionStorage.setItem("menuTableDesayuno",JSON.stringify((this.alimentoNutrientesTabla)));
-    sessionStorage.setItem("sumaTableDesayuno",JSON.stringify((this.sumaMenuTotal)));
-
-   //let temp= JSON.parse(sessionStorage.getItem("arrayDesayunoCantidad")||"");
-    //for(let j=0;j<temp.length;j++)
-   // {
-     // alert("cantidad "+j+": "+temp[j]);
-    //}
-
-    alert("Menú del desayuno enviado al análisis de ingesta");
+      sessionStorage.setItem("arrayDesayunoUnidad",JSON.stringify((this.tipoUnidadArray)));
+      sessionStorage.setItem("arrayDesayunoCantidad",JSON.stringify((this.cantidadAlimentoArray)));
+      sessionStorage.setItem("menuTableDesayuno",JSON.stringify((this.alimentoNutrientesTabla)));
+      sessionStorage.setItem("sumaTableDesayuno",JSON.stringify((this.sumaMenuTotal)));
+      alert("Menú del desayuno enviado al análisis de ingesta");
     }
     else
     {
       alert("Menú vacío");
-    }
-
-
-
-    
+    }    
   }
-
 }
 
 
