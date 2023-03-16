@@ -124,7 +124,7 @@ export class DesayunoComponent implements OnInit {
 
     console.log(this.proporcion)
     for (let x = 0; x < this.alimentoNutrientes.length; x++) {
-      this.alimentoNutrientes[x].cantidad = this.alimentoNutrientes[x].cantidad * this.proporcion;
+      this.alimentoNutrientes[x].cantidad = (this.alimentoNutrientes[x].cantidad * this.proporcion)/Number(this.cantidad);
     }
   }
 
