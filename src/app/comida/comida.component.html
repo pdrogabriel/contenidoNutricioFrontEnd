@@ -1,1 +1,256 @@
-<p>comida works!</p>
+<!-- Seleccion del alimento -->
+<br>
+<section>
+  <div class="row">
+    <div class="col-md-8 mb-4">
+      <div class="card mb-4">
+        <div class="card-header py-3">
+          <h1 class="mb-0">Comida</h1>
+        </div>
+        <div class="card-body">
+          <form>
+            <!-- Text input -->
+            <div class="row mb-4">
+              <div class="col">
+                
+                  <select class="btn btn-primary dropdown-toggle " (change)="ngSelectedComida($event)" >
+                    <option *ngFor="let grupoAlimento of grupoAlimentos; let i = index" [value]="grupoAlimentos[i].idGrupoAlimento" >
+                      {{grupoAlimento.tipo}}
+                    </option>
+                  </select>
+                
+              </div>
+              <div class="col">
+               <select class="btn btn-primary dropdown-toggle " (change)="ngSelectedUnidad($event)" >
+                <option *ngFor="let alimento of alimentos; let i = index" [value]="alimentos[i].idAlimento" >
+                  {{alimento.nombre}}
+                </option>
+              </select>
+              </div>
+            </div>
+
+
+            <!-- Cuadros de texto temporales para comproblar los Id del grupo de alimento y alimento -->
+            <!-- Tabla de desglose de nutrientes de alimentos 
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="desayunoId" name="selectedDesayuno" class="form-control"
+                    [(ngModel)]="selectedDesayuno" />
+                  <label class="form-label" for="desayunoId">Id grupo Alimento</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="selectedUnidad" name="selectedUnidad" class="form-control" 
+                  [(ngModel)]="selectedIdAlimento" />
+                  <label class="form-label" for="selectedUnidad">Id Alimento</label>
+                </div>
+              </div>
+              </div>
+               -->    
+
+            <!-- Muestra la unidad del alimento y su cantidad sugerida -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form6Example1" name="tipo" class="form-control" disabled="true"
+                    [(ngModel)]="unidad" />
+                  <label class="form-label" for="form6Example1">Unidad</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form6Example2" name="unidad_id" class="form-control" disabled="true"
+                  [(ngModel)]="cantidad"/>
+                  <label class="form-label" for="form6Example2">Cantidad sugerida</label>
+                </div>
+              </div>              
+            </div>
+
+
+
+<!-- Tabla del Menú --> 
+            <div class="panel-body overflow-scroll ">  
+              <table  class="table table-hover table-sm text-center" id="tableMenu">  
+               <!-- <caption>Men&uacute;</caption>--> 
+                  <thead class="thead-light">  
+                      <tr>  
+                        <th>Alimento</th>
+                        <th>Unidad</th>
+                        <th>Cantidad</th>
+                        <th>Peso bruto redondeado (g)</th>
+                        <th>Peso neto (g)</th>
+                        <th>Agua (ml)</th>
+                        <th>Energ&iacute;a (kcal)</th>
+                        <th>Prote&iacute;na (g)</th>
+                        <th>L&iacute;pidos (g)</th>
+                        <th>Hidratos de carbono (g)</th>
+                        <th>Fibra (g)</th>
+                        <th>Vitamina A (&micro;g RE)</th>
+                        <th>&Aacute;cido Asc&oacute;rbico (mg)</th>
+                        <th>&Aacute;cido F&oacute;lico (&micro;g)</th>
+                        <th>Hierro (mg)</th>
+                        <th>Potasio (mg)</th>
+                        <th>&Iacute;ndice glic&eacute;mico</th>
+                        <th>Carga glic&eacute;mica</th>
+                        <th>Az&uacute;car por equivalente (g)</th>
+                        <th>Calcio (mg)</th>
+                        <th>Sodio (mg)</th>
+                        <th>Selenio (&micro;g)</th>
+                        <th>F&oacute;sforo (mg)</th>
+                        <th>Colesterol (mg)</th>
+                        <th>AG saturados (g)</th>
+                        <th>AG monoinsaturados (g)</th>
+                        <th>AG poliinsaturados (g)</th>
+                        <th>Etanol (g)</th>
+                      </tr>  
+                  </thead>  
+                  <tbody>  
+                    <tr *ngFor="let alimentoNutrienteArray of alimentoNutrientesTabla; let i = index ">  
+                      <td>{{nombreAlimentoArray[i]}}</td>
+                      <td>{{tipoUnidadArray[i]}}</td>
+                      <td>{{cantidadAlimentoArray[i]}}</td>
+                      <td *ngFor="let alimentoNutriente of alimentoNutrienteArray ">  
+                          {{alimentoNutriente.cantidad}}     
+                      </td>     
+                    </tr>  
+                  </tbody><br> 
+              </table>  
+          </div>  
+<br>
+ <!-- Tabla de la Suma del menú --> 
+            <div class="panel-body overflow-scroll ">
+              <table id="sumaMenu-tble" class="table table-hover table-sm text-center">
+               <!--  <caption>Suma del Men&uacute;</caption>--> 
+                <thead class="thead-light">  
+                <tr>
+                  <th>Peso bruto redondeado (g)</th>
+                  <th>Peso neto (g)</th>
+                  <th>Agua (ml)</th>
+                  <th>Energ&iacute;a (kcal)</th>
+                  <th>Prote&iacute;na (g)</th>
+                  <th>L&iacute;pidos (g)</th>
+                  <th>Hidratos de carbono (g)</th>
+                  <th>Fibra (g)</th>
+                  <th>Vitamina A (&micro;g RE)</th>
+                  <th>&Aacute;cido Asc&oacute;rbico (mg)</th>
+                  <th>&Aacute;cido F&oacute;lico (&micro;g)</th>
+                  <th>Hierro (mg)</th>
+                  <th>Potasio (mg)</th>
+                  <th>&Iacute;ndice glic&eacute;mico</th>
+                  <th>Carga glic&eacute;mica</th>
+                  <th>Az&uacute;car por equivalente (g)</th>
+                  <th>Calcio (mg)</th>
+                  <th>Sodio (mg)</th>
+                  <th>Selenio (&micro;g)</th>
+                  <th>F&oacute;sforo (mg)</th>
+                  <th>Colesterol (mg)</th>
+                  <th>AG saturados (g)</th>
+                  <th>AG monoinsaturados (g)</th>
+                  <th>AG poliinsaturados (g)</th>
+                  <th>Etanol (g)</th>
+            </tr>
+            <tr>  
+                <td *ngFor="let alimentoNutriente of sumaMenuTotal; let i = index ">
+                  {{sumaMenuTotal[i]}}</td>
+            </tr>  
+          </thead>  
+        </table>
+      </div>
+<br>
+
+<li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+  <div class="col-4">
+   <div class="form-outline">
+     <input type="button" (click)="limpiarTabla()"  id="idBoton" value="Borrar Tabla" class="form-control btn btn-success" /> 
+   </div>
+ </div>
+ <div class="col-4">
+   <div class="form-outline">
+     <input type="button" (click)="borrarFila()"  id="idBoton" value="Eliminar fila" class="form-control btn btn-success" /> 
+   </div>
+ </div>
+</li>
+
+              <!-- Boton que envía a los archivos de Json --> 
+              <br>
+              <div border-0 px-0 pb-0>
+                <button class="btn btn-primary btn-lg btn-block" (click)="almacenarTablaMenu()" type="submit">
+                  Agregar al An&aacute;lisis de Ingesta
+                </button>
+              </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+
+<!-- Cambio en la cantidad de alimento --> 
+    <div class="col-md-4 mb-4">
+      <div class="card mb-4">
+        <div class="card-header py-3">
+          <h1 class="mb-0">Cantidad</h1>
+        </div>
+        
+        <ul class="list-group list-group-flush">
+          <h3>Cambie la cantidad del alimento</h3>
+          <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+            
+            <div class="col-6">
+              <div class="form-outline">
+                <input type="text" [(ngModel)]="proporcion" id="idCantidadNuevo" class="form-control" />
+              </div>
+            </div>
+          </li>
+       <!-- Botón que recalcula las cantidades de nutrientes de acuerdo al cambio de cantidad --> 
+          <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+             <div class="col-6">
+              <div class="form-outline">
+                <input type="button" (click)="calcularNutriente()"  id="idBoton" value="Actualizar" class="form-control btn btn-success" /> 
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-outline">
+                <input type="button" (click)="restableceNutrientes()"  id="idBoton" value="Restablecer" class="form-control btn btn-success" /> 
+              </div>
+            </div>
+          </li>
+
+
+            <!-- Botón que agrega el alimento al menú --> 
+            <div>
+              <div class="col-12 mt-4">
+                <div class="form-outline">
+                  <input type="button" (click)="agregarAlimentoNutrientesTabla()" id="idBotonTabla" value="Agregar al Men&uacute;" class="form-control btn btn-primary btn-block" />
+                </div>
+              </div>
+              </div>
+        </ul>
+
+
+<!-- Tabla de desglose de nutrientes de alimentos --> 
+        <div class="card-body">
+            <h2>Desglose de nutrientes</h2>
+            <div class="panel-body">  
+              <table  class="table table-hover table-sm"  >  
+                  <thead class="thead-light">  
+                      <tr>  
+                          <th>Nombre</th>  
+                          <th>Cantidad</th>  
+                      </tr>  
+                  </thead>  
+                  <tbody>  
+                       <tr *ngFor="let alimentoNutriente of alimentoNutrientes ">  
+                          <td>{{alimentoNutriente.nutrientes.nutriente}}</td>  
+                          <td>{{alimentoNutriente.cantidad}}</td>                          
+                        </tr>    
+                  </tbody><br>  
+              </table>  
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--  -->

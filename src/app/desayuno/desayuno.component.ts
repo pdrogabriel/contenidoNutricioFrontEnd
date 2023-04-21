@@ -17,7 +17,6 @@ export class DesayunoComponent implements OnInit {
 
   // Rolando: Se crea un arreglo para almacenar el arrego nutriente original
   alimentoNutrientesCopia: AlimentoNutriente[] = [];
-
   alimentoNutrientesTabla: AlimentoNutriente[][] = [];
 
 
@@ -57,7 +56,6 @@ export class DesayunoComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerGrupoAlimentos();
-
   }
 
   obtenerGrupoAlimentos(): void {
@@ -99,7 +97,6 @@ export class DesayunoComponent implements OnInit {
           console.log(error);
         }
       )
-
   }
 
   obtenerAlimentoNutrientes(idAlimento: Number): void {
@@ -230,6 +227,3 @@ export class DesayunoComponent implements OnInit {
     }
   }
 }
-
-
-
