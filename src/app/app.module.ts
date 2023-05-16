@@ -17,6 +17,9 @@ import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { TiempocomidaComponent } from './tiempocomida/tiempocomida.component';
 import { UsuarioComponent } from './usuario/usuario/usuario.component';
+import { AdmonAdminComponent } from './admon-admin/admon-admin.component';
+import { AcercadeComponent } from './acercade/acercade.component';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import { UsuarioComponent } from './usuario/usuario/usuario.component';
     TiempocomidaComponent,
     UsuarioComponent,
     UsuarioComponent,
+    AdmonAdminComponent,
+    AcercadeComponent,
   ],
   imports: [
     BrowserModule,

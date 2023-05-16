@@ -220,7 +220,7 @@ export class ColacionmatutinaComponent implements OnInit {
       sessionStorage.setItem("arrayColacionMatutinaCantidad", JSON.stringify((this.cantidadAlimentoArray)));
       sessionStorage.setItem("menuTableColacionMatutina", JSON.stringify((this.alimentoNutrientesTabla)));
       sessionStorage.setItem("sumaTableColacionMatutina", JSON.stringify((this.sumaMenuTotal)));
-      alert("Menú del ColacionMatutina enviado al análisis de ingesta");
+      alert("El menú de la colación matutina fue enviado al análisis de ingesta");
     }
     else {
       alert("Menú vacío");

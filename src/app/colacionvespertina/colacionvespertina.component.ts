@@ -220,7 +220,7 @@ export class ColacionvespertinaComponent implements OnInit {
       sessionStorage.setItem("arrayColacionVespertinaCantidad", JSON.stringify((this.cantidadAlimentoArray)));
       sessionStorage.setItem("menuTableColacionVespertina", JSON.stringify((this.alimentoNutrientesTabla)));
       sessionStorage.setItem("sumaTableColacionVespertina", JSON.stringify((this.sumaMenuTotal)));
-      alert("Menú del ColacionVespertina enviado al análisis de ingesta");
+      alert("El menú de la colacion vespertina fue enviado al análisis de ingesta");
     }
     else {
       alert("Menú vacío");

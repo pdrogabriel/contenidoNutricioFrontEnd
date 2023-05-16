@@ -9,6 +9,8 @@ import { DesayunoComponent } from './desayuno/desayuno.component';
 import { HomeComponent } from './home/home.component';
 import { TiempocomidaComponent } from './tiempocomida/tiempocomida.component';
 import { UsuarioComponent } from './usuario/usuario/usuario.component';
+import { AcercadeComponent } from './acercade/acercade.component';
+import { AdmonAdminComponent } from './admon-admin/admon-admin.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -19,7 +21,9 @@ const routes: Routes = [
   {path: 'comida', component: ComidaComponent},
   {path: 'colacion-vespertina', component: ColacionvespertinaComponent},
   {path: 'cena', component: CenaComponent},
-  {path: 'concentrado', component: ConcentradoComponent}
+  {path: 'concentrado', component: ConcentradoComponent},
+  {path: 'acercade', component: AcercadeComponent},
+  {path: 'admon-admin', component: AdmonAdminComponent}
 ];
 
 @NgModule({

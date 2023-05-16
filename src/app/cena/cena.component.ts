@@ -220,7 +220,7 @@ export class CenaComponent implements OnInit {
       sessionStorage.setItem("arrayCenaCantidad", JSON.stringify((this.cantidadAlimentoArray)));
       sessionStorage.setItem("menuTableCena", JSON.stringify((this.alimentoNutrientesTabla)));
       sessionStorage.setItem("sumaTableCena", JSON.stringify((this.sumaMenuTotal)));
-      alert("Menú del Cena enviado al análisis de ingesta");
+      alert("El menú de la cena fue enviado al análisis de ingesta");
     }
     else {
       alert("Menú vacío");

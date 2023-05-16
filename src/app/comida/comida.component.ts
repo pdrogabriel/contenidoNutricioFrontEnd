@@ -221,7 +221,7 @@ export class ComidaComponent implements OnInit {
       sessionStorage.setItem("arrayComidaCantidad", JSON.stringify((this.cantidadAlimentoArray)));
       sessionStorage.setItem("menuTableComida", JSON.stringify((this.alimentoNutrientesTabla)));
       sessionStorage.setItem("sumaTableComida", JSON.stringify((this.sumaMenuTotal)));
-      alert("Menú del Comida enviado al análisis de ingesta");
+      alert("El menú de la comida fue enviado al análisis de ingesta");
     }
     else {
       alert("Menú vacío");
