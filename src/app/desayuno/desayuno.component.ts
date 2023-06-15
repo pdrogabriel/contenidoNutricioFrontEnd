@@ -214,6 +214,7 @@ export class DesayunoComponent implements OnInit {
   }
 
   almacenarTablaMenu() {
+    
     if (this.alimentoNutrientesTabla.length != 0) {
       sessionStorage.setItem("arrayDesayunoNombre", JSON.stringify((this.nombreAlimentoArray)));
       sessionStorage.setItem("arrayDesayunoUnidad", JSON.stringify((this.tipoUnidadArray)));

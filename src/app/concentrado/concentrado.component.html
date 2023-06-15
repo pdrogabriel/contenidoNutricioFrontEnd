@@ -42,15 +42,441 @@
         <th class="nutriente">AG poliinsaturados (g)</th>
         <th class="nutriente">Etanol (g)</th>
   </tr>
-   <!-- Aca llenamos la tabla de desayuno --> 
-  <tr *ngFor="let alimentoNutrienteArray of desayunoTabla; let i = index">
+   <!-- Silviana: Aca llenamos la tabla de desayuno --> 
+  <tr *ngFor="let alimentoNutrienteArray of desayunoTabla; let i = index ">
     <td>{{nombreAlimentoDesayunoArray[i]}}</td>
     <td>{{unidadAlimentoDesayunoArray[i]}}</td>
     <td>{{cantidadAlimentoDesayunoArray[i]}}</td>
-     <td>i</td>
+    <td *ngFor="let alimentoNutriente of alimentoNutrienteArray ">  
+      {{alimentoNutriente.cantidad}}     
+  </td>     
+</tr>  
+<!-- Seccion de la suma del desayuno --> 
+<tr>
+  <th class="suma" colspan="28">Suma preliminar del desayuno</th>
+</tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <th class="nutriente">Peso bruto redondeado (g)</th>
+    <th class="nutriente">Peso neto (g)</th>
+    <th class="nutriente">Agua (ml)</th>
+    <th class="nutriente">Energ&iacute;a (kcal)</th>
+    <th class="nutriente">Prote&iacute;na (g)</th>
+    <th class="nutriente">L&iacute;pidos (g)</th>
+    <th class="nutriente">Hidratos de carbono (g)</th>
+    <th class="nutriente">Fibra (g)</th>
+    <th class="nutriente">Vitamina A (&micro;g RE)</th>
+    <th class="nutriente">&Aacute;cido Asc&oacute;rbico (mg)</th>
+    <th class="nutriente">&Aacute;cido F&oacute;lico (&micro;g)</th>
+    <th class="nutriente">Hierro (mg)</th>
+    <th class="nutriente">Potasio (mg)</th>
+    <th class="nutriente">&Iacute;ndice glic&eacute;mico</th>
+    <th class="nutriente">Carga glic&eacute;mica</th>
+    <th class="nutriente">Az&uacute;car por equivalente (g)</th>
+    <th class="nutriente">Calcio (mg)</th>
+    <th class="nutriente">Sodio (mg)</th>
+    <th class="nutriente">Selenio (&micro;g)</th>
+    <th class="nutriente">F&oacute;sforo (mg)</th>
+    <th class="nutriente">Colesterol (mg)</th>
+    <th class="nutriente">AG saturados (g)</th>
+    <th class="nutriente">AG monoinsaturados (g)</th>
+    <th class="nutriente">AG poliinsaturados (g)</th>
+    <th class="nutriente">Etanol (g)</th>            
+</tr>
+<!-- Aca llenamos la suma del desayuno --> 
+<tr>  
+<td></td>
+<td></td>
+<td></td>
+ <td *ngFor="let alimentoNutriente of desayunoSumaTabla; let i = index ">
+  {{desayunoSumaTabla[i]}}</td>     
+</tr> 
+    <!-- Seccion de la colacion matutina -->
+    <tr>
+      <th class="tiempoComida" colspan="28">Colaci&oacute;n Matutina</th>
+    </tr>
+      <tr>
+        <th class="nutriente">Alimento</th>
+        <th class="nutriente">Cantidad sugerida</th>
+        <th class="nutriente">Unidad</th>
+        <th class="nutriente">Peso bruto redondeado (g)</th>
+        <th class="nutriente">Peso neto (g)</th>
+        <th class="nutriente">Agua (ml)</th>
+        <th class="nutriente">Energ&iacute;a (kcal)</th>
+        <th class="nutriente">Prote&iacute;na (g)</th>
+        <th class="nutriente">L&iacute;pidos (g)</th>
+        <th class="nutriente">Hidratos de carbono (g)</th>
+        <th class="nutriente">Fibra (g)</th>
+        <th class="nutriente">Vitamina A (&micro;g RE)</th>
+        <th class="nutriente">&Aacute;cido Asc&oacute;rbico (mg)</th>
+        <th class="nutriente">&Aacute;cido F&oacute;lico (&micro;g)</th>
+        <th class="nutriente">Hierro (mg)</th>
+        <th class="nutriente">Potasio (mg)</th>
+        <th class="nutriente">&Iacute;ndice glic&eacute;mico</th>
+        <th class="nutriente">Carga glic&eacute;mica</th>
+        <th class="nutriente">Az&uacute;car por equivalente (g)</th>
+        <th class="nutriente">Calcio (mg)</th>
+        <th class="nutriente">Sodio (mg)</th>
+        <th class="nutriente">Selenio (&micro;g)</th>
+        <th class="nutriente">F&oacute;sforo (mg)</th>
+        <th class="nutriente">Colesterol (mg)</th>
+        <th class="nutriente">AG saturados (g)</th>
+        <th class="nutriente">AG monoinsaturados (g)</th>
+        <th class="nutriente">AG poliinsaturados (g)</th>
+        <th class="nutriente">Etanol (g)</th>      
+  </tr>
 
-    
-         
-  </tr>  
+<!-- Seccion de los alimento de la Colacion Matutina --> 
+<tr *ngFor="let alimentoNutrienteArray of colacionMatutinaTabla; let i = index ">  
+  <td>{{nombreAlimentoColacionMatutinaArray[i]}}</td>
+  <td>{{unidadAlimentoColacionMatutinaArray[i]}}</td>
+  <td>{{cantidadAlimentoColacionMatutinaArray[i]}}</td>
+  <td *ngFor="let alimentoNutriente of alimentoNutrienteArray ">  
+      {{alimentoNutriente.cantidad}}     
+  </td>     
+</tr> 
+
+<!-- Seccion de la suma de la colacion matutina --> 
+  <tr>    
+    <th class="suma" colspan="28">Suma preliminar de la Colaci&oacute;n Matutina</th>
+  </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <th class="nutriente">Peso bruto redondeado (g)</th>
+      <th class="nutriente">Peso neto (g)</th>
+      <th class="nutriente">Agua (ml)</th>
+      <th class="nutriente">Energ&iacute;a (kcal)</th>
+      <th class="nutriente">Prote&iacute;na (g)</th>
+      <th class="nutriente">L&iacute;pidos (g)</th>
+      <th class="nutriente">Hidratos de carbono (g)</th>
+      <th class="nutriente">Fibra (g)</th>
+      <th class="nutriente">Vitamina A (&micro;g RE)</th>
+      <th class="nutriente">&Aacute;cido Asc&oacute;rbico (mg)</th>
+      <th class="nutriente">&Aacute;cido F&oacute;lico (&micro;g)</th>
+      <th class="nutriente">Hierro (mg)</th>
+      <th class="nutriente">Potasio (mg)</th>
+      <th class="nutriente">&Iacute;ndice glic&eacute;mico</th>
+      <th class="nutriente">Carga glic&eacute;mica</th>
+      <th class="nutriente">Az&uacute;car por equivalente (g)</th>
+      <th class="nutriente">Calcio (mg)</th>
+      <th class="nutriente">Sodio (mg)</th>
+      <th class="nutriente">Selenio (&micro;g)</th>
+      <th class="nutriente">F&oacute;sforo (mg)</th>
+      <th class="nutriente">Colesterol (mg)</th>
+      <th class="nutriente">AG saturados (g)</th>
+      <th class="nutriente">AG monoinsaturados (g)</th>
+      <th class="nutriente">AG poliinsaturados (g)</th>
+      <th class="nutriente">Etanol (g)</th>
+</tr>
+<!-- Seccion de la suma de la colacion Matutina llenado--> 
+<tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td *ngFor="let alimentoNutriente of colacionMatutinaSumaTabla; let i = index ">
+    {{colacionMatutinaSumaTabla[i]}}</td> 
+</tr> 
+ <!-- Seccion de la comida --> 
+ <tr>
+  <th class="tiempoComida" colspan="28">Comida</th>
+</tr>
+<tr>
+  <th class="nutriente">Alimento</th>
+  <th class="nutriente">Cantidad sugerida</th>
+  <th class="nutriente">Unidad</th>
+  <th class="nutriente">Peso bruto redondeado (g)</th>
+  <th class="nutriente">Peso neto (g)</th>
+  <th class="nutriente">Agua (ml)</th>
+  <th class="nutriente">Energ&iacute;a (kcal)</th>
+  <th class="nutriente">Prote&iacute;na (g)</th>
+  <th class="nutriente">L&iacute;pidos (g)</th>
+  <th class="nutriente">Hidratos de carbono (g)</th>
+  <th class="nutriente">Fibra (g)</th>
+  <th class="nutriente">Vitamina A (&micro;g RE)</th>
+  <th class="nutriente">&Aacute;cido Asc&oacute;rbico (mg)</th>
+  <th class="nutriente">&Aacute;cido F&oacute;lico (&micro;g)</th>
+  <th class="nutriente">Hierro (mg)</th>
+  <th class="nutriente">Potasio (mg)</th>
+  <th class="nutriente">&Iacute;ndice glic&eacute;mico</th>
+  <th class="nutriente">Carga glic&eacute;mica</th>
+  <th class="nutriente">Az&uacute;car por equivalente (g)</th>
+  <th class="nutriente">Calcio (mg)</th>
+  <th class="nutriente">Sodio (mg)</th>
+  <th class="nutriente">Selenio (&micro;g)</th>
+  <th class="nutriente">F&oacute;sforo (mg)</th>
+  <th class="nutriente">Colesterol (mg)</th>
+  <th class="nutriente">AG saturados (g)</th>
+  <th class="nutriente">AG monoinsaturados (g)</th>
+  <th class="nutriente">AG poliinsaturados (g)</th>
+  <th class="nutriente">Etanol (g)</th>      
+</tr>
+<!-- Aca llenamos la tabla de Comida--> 
+<tr *ngFor="let alimentoNutrienteArray of comidaTabla; let i = index ">  
+<td>{{nombreAlimentComidaArray[i]}}</td>
+<td>{{unidadAlimentoComidaArray[i]}}</td>
+<td>{{cantidadAlimentoComidaArray[i]}}</td>
+<td *ngFor="let alimentoNutriente of alimentoNutrienteArray ">  
+    {{alimentoNutriente.cantidad}}     
+</td>     
+</tr>  
+
+<!-- Seccion de la suma de la comida --> 
+<tr>
+<th class="suma" colspan="28">Suma preliminar de la Comida</th>
+</tr>
+<tr>
+ <td></td>
+ <td></td>
+ <td></td>
+ <th class="nutriente">Peso bruto redondeado (g)</th>
+ <th class="nutriente">Peso neto (g)</th>
+ <th class="nutriente">Agua (ml)</th>
+ <th class="nutriente">Energ&iacute;a (kcal)</th>
+ <th class="nutriente">Prote&iacute;na (g)</th>
+ <th class="nutriente">L&iacute;pidos (g)</th>
+ <th class="nutriente">Hidratos de carbono (g)</th>
+ <th class="nutriente">Fibra (g)</th>
+ <th class="nutriente">Vitamina A (&micro;g RE)</th>
+ <th class="nutriente">&Aacute;cido Asc&oacute;rbico (mg)</th>
+ <th class="nutriente">&Aacute;cido F&oacute;lico (&micro;g)</th>
+ <th class="nutriente">Hierro (mg)</th>
+ <th class="nutriente">Potasio (mg)</th>
+ <th class="nutriente">&Iacute;ndice glic&eacute;mico</th>
+ <th class="nutriente">Carga glic&eacute;mica</th>
+ <th class="nutriente">Az&uacute;car por equivalente (g)</th>
+ <th class="nutriente">Calcio (mg)</th>
+ <th class="nutriente">Sodio (mg)</th>
+ <th class="nutriente">Selenio (&micro;g)</th>
+ <th class="nutriente">F&oacute;sforo (mg)</th>
+ <th class="nutriente">Colesterol (mg)</th>
+ <th class="nutriente">AG saturados (g)</th>
+ <th class="nutriente">AG monoinsaturados (g)</th>
+ <th class="nutriente">AG poliinsaturados (g)</th>
+ <th class="nutriente">Etanol (g)</th>
+</tr>
+<!-- Seccion de llenado de la suma de la Comida--> 
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td *ngFor="let alimentoNutriente of comidaSumaTabla; let i = index ">
+  {{comidaSumaTabla[i]}}</td> 
+</tr>
+
+<!-- Seccion de la colacion vespertina --> 
+<tr>
+  <th class="tiempoComida" colspan="28">Colaci&oacute;n Vespertina</th>
+</tr>
+  <tr>
+    <th class="nutriente">Alimento</th>
+    <th class="nutriente">Cantidad sugerida</th>
+    <th class="nutriente">Unidad</th>
+    <th class="nutriente">Peso bruto redondeado (g)</th>
+    <th class="nutriente">Peso neto (g)</th>
+    <th class="nutriente">Agua (ml)</th>
+    <th class="nutriente">Energ&iacute;a (kcal)</th>
+    <th class="nutriente">Prote&iacute;na (g)</th>
+    <th class="nutriente">L&iacute;pidos (g)</th>
+    <th class="nutriente">Hidratos de carbono (g)</th>
+    <th class="nutriente">Fibra (g)</th>
+    <th class="nutriente">Vitamina A (&micro;g RE)</th>
+    <th class="nutriente">&Aacute;cido Asc&oacute;rbico (mg)</th>
+    <th class="nutriente">&Aacute;cido F&oacute;lico (&micro;g)</th>
+    <th class="nutriente">Hierro (mg)</th>
+    <th class="nutriente">Potasio (mg)</th>
+    <th class="nutriente">&Iacute;ndice glic&eacute;mico</th>
+    <th class="nutriente">Carga glic&eacute;mica</th>
+    <th class="nutriente">Az&uacute;car por equivalente (g)</th>
+    <th class="nutriente">Calcio (mg)</th>
+    <th class="nutriente">Sodio (mg)</th>
+    <th class="nutriente">Selenio (&micro;g)</th>
+    <th class="nutriente">F&oacute;sforo (mg)</th>
+    <th class="nutriente">Colesterol (mg)</th>
+    <th class="nutriente">AG saturados (g)</th>
+    <th class="nutriente">AG monoinsaturados (g)</th>
+    <th class="nutriente">AG poliinsaturados (g)</th>
+    <th class="nutriente">Etanol (g)</th>      
+</tr>
+<!-- Llenamos los alimento de la colacion vespertina -->
+<tr *ngFor="let alimentoNutrienteArray of colacionVespertinaTabla; let i = index ">  
+<td>{{nombreAlimentoColacionVespertinaArray[i]}}</td>
+<td>{{unidadAlimentoColacionVespertinaArray[i]}}</td>
+<td>{{cantidadAlimentoColacionVespertinaArray[i]}}</td>
+<td *ngFor="let alimentoNutriente of alimentoNutrienteArray ">  
+    {{alimentoNutriente.cantidad}}     
+</td>     
+</tr> 
+
+
+<!-- Seccion de la suma de la colacion vespertina --> 
+<tr>    
+  <th class="suma" colspan="28">Suma preliminar de la Colaci&oacute;n Vespertina</th>
+</tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <th class="nutriente">Peso bruto redondeado (g)</th>
+    <th class="nutriente">Peso neto (g)</th>
+    <th class="nutriente">Agua (ml)</th>
+    <th class="nutriente">Energ&iacute;a (kcal)</th>
+    <th class="nutriente">Prote&iacute;na (g)</th>
+    <th class="nutriente">L&iacute;pidos (g)</th>
+    <th class="nutriente">Hidratos de carbono (g)</th>
+    <th class="nutriente">Fibra (g)</th>
+    <th class="nutriente">Vitamina A (&micro;g RE)</th>
+    <th class="nutriente">&Aacute;cido Asc&oacute;rbico (mg)</th>
+    <th class="nutriente">&Aacute;cido F&oacute;lico (&micro;g)</th>
+    <th class="nutriente">Hierro (mg)</th>
+    <th class="nutriente">Potasio (mg)</th>
+    <th class="nutriente">&Iacute;ndice glic&eacute;mico</th>
+    <th class="nutriente">Carga glic&eacute;mica</th>
+    <th class="nutriente">Az&uacute;car por equivalente (g)</th>
+    <th class="nutriente">Calcio (mg)</th>
+    <th class="nutriente">Sodio (mg)</th>
+    <th class="nutriente">Selenio (&micro;g)</th>
+    <th class="nutriente">F&oacute;sforo (mg)</th>
+    <th class="nutriente">Colesterol (mg)</th>
+    <th class="nutriente">AG saturados (g)</th>
+    <th class="nutriente">AG monoinsaturados (g)</th>
+    <th class="nutriente">AG poliinsaturados (g)</th>
+    <th class="nutriente">Etanol (g)</th>
+</tr>
+<!-- Llenamos la suma de la Colacion Vespertina --> 
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td *ngFor="let alimentoNutriente of colacionVespertinaSumaTabla; let i = index ">
+  {{colacionVespertinaSumaTabla[i]}}</td> 
+</tr>
+
+<!-- Seccion de la cena --> 
+<tr>
+  <th class="tiempoComida" colspan="28">Cena</th>
+</tr>
+<tr>
+  <th class="nutriente">Alimento</th>
+  <th class="nutriente">Cantidad sugerida</th>
+  <th class="nutriente">Unidad</th>
+  <th class="nutriente">Peso bruto redondeado (g)</th>
+  <th class="nutriente">Peso neto (g)</th>
+  <th class="nutriente">Agua (ml)</th>
+  <th class="nutriente">Energ&iacute;a (kcal)</th>
+  <th class="nutriente">Prote&iacute;na (g)</th>
+  <th class="nutriente">L&iacute;pidos (g)</th>
+  <th class="nutriente">Hidratos de carbono (g)</th>
+  <th class="nutriente">Fibra (g)</th>
+  <th class="nutriente">Vitamina A (&micro;g RE)</th>
+  <th class="nutriente">&Aacute;cido Asc&oacute;rbico (mg)</th>
+  <th class="nutriente">&Aacute;cido F&oacute;lico (&micro;g)</th>
+  <th class="nutriente">Hierro (mg)</th>
+  <th class="nutriente">Potasio (mg)</th>
+  <th class="nutriente">&Iacute;ndice glic&eacute;mico</th>
+  <th class="nutriente">Carga glic&eacute;mica</th>
+  <th class="nutriente">Az&uacute;car por equivalente (g)</th>
+  <th class="nutriente">Calcio (mg)</th>
+  <th class="nutriente">Sodio (mg)</th>
+  <th class="nutriente">Selenio (&micro;g)</th>
+  <th class="nutriente">F&oacute;sforo (mg)</th>
+  <th class="nutriente">Colesterol (mg)</th>
+  <th class="nutriente">AG saturados (g)</th>
+  <th class="nutriente">AG monoinsaturados (g)</th>
+  <th class="nutriente">AG poliinsaturados (g)</th>
+  <th class="nutriente">Etanol (g)</th>      
+</tr>
+<!-- Aca llenamos la tabla de Cena--> 
+<tr *ngFor="let alimentoNutrienteArray of cenaTabla; let i = index ">  
+<td>{{nombreAlimentCenaArray[i]}}</td>
+<td>{{unidadAlimentoCenaArray[i]}}</td>
+<td>{{cantidadAlimentoCenaArray[i]}}</td>
+<td *ngFor="let alimentoNutriente of alimentoNutrienteArray ">  
+    {{alimentoNutriente.cantidad}}     
+</td>     
+</tr>  
+<!-- Seccion de la suma de la cena --> 
+<tr>
+  <th class="suma" colspan="28">Suma preliminar de la Cena</th>
+</tr>
+ <tr>
+   <td></td>
+   <td></td>
+   <td></td>
+   <th class="nutriente">Peso bruto redondeado (g)</th>
+   <th class="nutriente">Peso neto (g)</th>
+   <th class="nutriente">Agua (ml)</th>
+   <th class="nutriente">Energ&iacute;a (kcal)</th>
+   <th class="nutriente">Prote&iacute;na (g)</th>
+   <th class="nutriente">L&iacute;pidos (g)</th>
+   <th class="nutriente">Hidratos de carbono (g)</th>
+   <th class="nutriente">Fibra (g)</th>
+   <th class="nutriente">Vitamina A (&micro;g RE)</th>
+   <th class="nutriente">&Aacute;cido Asc&oacute;rbico (mg)</th>
+   <th class="nutriente">&Aacute;cido F&oacute;lico (&micro;g)</th>
+   <th class="nutriente">Hierro (mg)</th>
+   <th class="nutriente">Potasio (mg)</th>
+   <th class="nutriente">&Iacute;ndice glic&eacute;mico</th>
+   <th class="nutriente">Carga glic&eacute;mica</th>
+   <th class="nutriente">Az&uacute;car por equivalente (g)</th>
+   <th class="nutriente">Calcio (mg)</th>
+   <th class="nutriente">Sodio (mg)</th>
+   <th class="nutriente">Selenio (&micro;g)</th>
+   <th class="nutriente">F&oacute;sforo (mg)</th>
+   <th class="nutriente">Colesterol (mg)</th>
+   <th class="nutriente">AG saturados (g)</th>
+   <th class="nutriente">AG monoinsaturados (g)</th>
+   <th class="nutriente">AG poliinsaturados (g)</th>
+   <th class="nutriente">Etanol (g)</th>
+</tr>
+<!-- Llenamos la suma de la Cena--> 
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td *ngFor="let alimentoNutriente of cenaSumaTabla; let i = index ">
+      {{cenaSumaTabla[i]}}</td> 
+  </tr>
+
+<!-- SUMA FINAL--> 
+<tr>
+<th class="tiempoComida" colspan="28">Suma Final</th>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<th class="nutriente">Peso bruto redondeado (g)</th>
+<th class="nutriente">Peso neto (g)</th>
+<th class="nutriente">Agua (ml)</th>
+<th class="nutriente">Energ&iacute;a (kcal)</th>
+<th class="nutriente">Prote&iacute;na (g)</th>
+<th class="nutriente">L&iacute;pidos (g)</th>
+<th class="nutriente">Hidratos de carbono (g)</th>
+<th class="nutriente">Fibra (g)</th>
+<th class="nutriente">Vitamina A (&micro;g RE)</th>
+<th class="nutriente">&Aacute;cido Asc&oacute;rbico (mg)</th>
+<th class="nutriente">&Aacute;cido F&oacute;lico (&micro;g)</th>
+<th class="nutriente">Hierro (mg)</th>
+<th class="nutriente">Potasio (mg)</th>
+<th class="nutriente">&Iacute;ndice glic&eacute;mico</th>
+<th class="nutriente">Carga glic&eacute;mica</th>
+<th class="nutriente">Az&uacute;car por equivalente (g)</th>
+<th class="nutriente">Calcio (mg)</th>
+<th class="nutriente">Sodio (mg)</th>
+<th class="nutriente">Selenio (&micro;g)</th>
+<th class="nutriente">F&oacute;sforo (mg)</th>
+<th class="nutriente">Colesterol (mg)</th>
+<th class="nutriente">AG saturados (g)</th>
+<th class="nutriente">AG monoinsaturados (g)</th>
+<th class="nutriente">AG poliinsaturados (g)</th>
+<th class="nutriente">Etanol (g)</th>      
+</tr>
+
+
+
   </table>
 </div>
