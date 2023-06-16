@@ -11,6 +11,7 @@ import { AlimentoNutriente } from '../clases/alimento-nutriente';
   templateUrl: './concentrado.component.html',
   styleUrls: ['./concentrado.component.css']
 })
+
 export class ConcentradoComponent implements OnInit {
 
   //nombre del archivo
@@ -31,7 +32,7 @@ unidadAlimentoColacionMatutinaArray: String[] = []
 cantidadAlimentoColacionMatutinaArray: Number[] = []
 //Tabla de la colacion matutina
 colacionMatutinaTabla: AlimentoNutriente[][] = [];
-//Tabla de la colacion matutina
+//Tabla de la suma de la colacion matutina
 colacionMatutinaSumaTabla: Number[] = [];
 
 //Arreglos de la Comida
@@ -40,7 +41,7 @@ unidadAlimentoComidaArray: String[] = []
 cantidadAlimentoComidaArray: Number[] = []
 //Tabla de la Comida
 comidaTabla: AlimentoNutriente[][] = [];
-//Tabla de la Comida
+//Tabla de la suma de la Comida
 comidaSumaTabla: Number[] = [];
 
 //Arreglos de la colación vespertina
@@ -49,7 +50,7 @@ unidadAlimentoColacionVespertinaArray: String[] = []
 cantidadAlimentoColacionVespertinaArray: Number[] = []
 //Tabla de la colacion vespertina
 colacionVespertinaTabla: AlimentoNutriente[][] = [];
-//Tabla de la colacion vespertina
+//Tabla de la suma de la colacion vespertina
 colacionVespertinaSumaTabla: Number[] = [];
 
 
@@ -59,8 +60,12 @@ unidadAlimentoCenaArray: String[] = []
 cantidadAlimentoCenaArray: Number[] = []
 //Tabla de la Cena
 cenaTabla: AlimentoNutriente[][] = [];
-//Tabla de la Cena
+//Tabla de la suma de la Cena
 cenaSumaTabla: Number[] = [];
+
+
+//Arreglo de la suma Total
+sumaTotal: Number[] = [];
 
 
    //Declaración del constructor
@@ -130,9 +135,13 @@ cenaSumaTabla: Number[] = [];
     if (sessionStorage.getItem("sumaTableCena")!=null)
     this.cenaSumaTabla=JSON.parse(sessionStorage.getItem("sumaTableCena")||"");
 
-      
-
       sessionStorage.clear();
+
+      for (let i = 0; i < 25; i++)
+      {
+        this.sumaTotal[i]=Number(this.desayunoSumaTabla[i])+Number(this.colacionMatutinaSumaTabla[i])+Number(this.comidaSumaTabla[i])+Number(this.colacionVespertinaSumaTabla[i])+Number(this.cenaSumaTabla[i]);
+      }
+  
   }
 
 

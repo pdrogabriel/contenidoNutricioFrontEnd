@@ -475,8 +475,14 @@
 <th class="nutriente">AG poliinsaturados (g)</th>
 <th class="nutriente">Etanol (g)</th>      
 </tr>
-
-
+  <!-- SUMA FINAL valores--> 
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td *ngFor="let alimentoNutriente of sumaTotal; let i = index ">
+      {{sumaTotal[i]}}</td> 
+  </tr>
 
   </table>
 </div>
