@@ -1,14 +1,14 @@
-<h1 class="mb-0">Usuarios con acceso a la plataforma ANAMEX</h1>
+<h1 class="mb-0">Soliciitudes de acceso a la plataforma ANAMEX</h1>
 
 
 <br>
 <div>
     <form>
- <!---Silviana: Tabla de usuarios con acceso a la plataforma --> 
+ <!---Silviana: Tabla de las solicitudes de  acceso a la plataforma --> 
             <div class="panel-body overflow-scroll ">
               <table id="usuarioAcceso-tble" class="table table-hover table-sm text-center">
                 <thead class="thead-light">  
-<!---Silviana: Acá se llena la tabla con la información de los usuarios con acceso a la plataforma --> 
+<!---Silviana: Acá se llena la tabla con las solicitudes de acceso a la plataforma --> 
                 <tr>
                   <th>Nombre</th>
                   <th>Apellido paterno</th>
@@ -16,7 +16,7 @@
                   <th>Instituci&oacute;n</th>
                   <th>Correo electr&oacute;nico</th>
 <!---Silviana: En la columna "Acción" se colocará un botón para borrar al usuario de la BD --> 
-                  <th>Acci&oacute;n</th>
+                  <th colspan="2">Acci&oacute;n</th>
             </tr>
             </thead>
 <!---Silviana: Acá deben colocarse los datos de los usuarios, eston colocando dos usuarios de prueba --> 
@@ -28,7 +28,8 @@
         <td>Sierra Sur</td>
         <td>nombre@correo.com</td>
 <!---Silviana: Este es el botón para borrar a este usario en particular --> 
-        <input type="button"  id="deleteButton" value="Eliminar" (click)="eliminarFila(0)" class="form-control btn btn-success" />    
+        <td><input type="button"  id="AddButton" value="Agregar" (click)="eliminarFila(0)" class="form-control btn btn-success" />    </td>
+        <td><input type="button"  id="deleteButton" value="Eliminar" (click)="eliminarFila(0)" class="form-control btn btn-success" /></td>
     </tr>  
      <tr id="fila1">  
         <td>Rosita</td>
@@ -37,7 +38,8 @@
         <td>Sierra Sur</td>
         <td>nombre@correo.com</td>
 <!---Silviana: Cada usuario tendrá su botón, de eso yo me encargo --> 
-        <input type="button"  id="idBoton" value="Eliminar" (click)="eliminarFila(1)" class="form-control btn btn-success" /> 
+        <td><input type="button"  id="AddButton" value="Agregar" (click)="eliminarFila(0)" class="form-control btn btn-success" />    </td>
+        <td><input type="button"  id="deleteButton" value="Eliminar" (click)="eliminarFila(0)" class="form-control btn btn-success" /></td> 
     </tr>    
         </table>
       </div>

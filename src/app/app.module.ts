@@ -19,6 +19,7 @@ import { TiempocomidaComponent } from './tiempocomida/tiempocomida.component';
 import { UsuarioComponent } from './usuario/usuario/usuario.component';
 import { AdmonAdminComponent } from './admon-admin/admon-admin.component';
 import { AcercadeComponent } from './acercade/acercade.component';
+import { AdmonSolicitaComponent } from './admon-solicita/admon-solicita.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { AcercadeComponent } from './acercade/acercade.component';
     UsuarioComponent,
     AdmonAdminComponent,
     AcercadeComponent,
+    AdmonSolicitaComponent,
   ],
   imports: [
     BrowserModule,

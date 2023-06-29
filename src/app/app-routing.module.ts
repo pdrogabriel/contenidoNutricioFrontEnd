@@ -11,6 +11,8 @@ import { TiempocomidaComponent } from './tiempocomida/tiempocomida.component';
 import { UsuarioComponent } from './usuario/usuario/usuario.component';
 import { AcercadeComponent } from './acercade/acercade.component';
 import { AdmonAdminComponent } from './admon-admin/admon-admin.component';
+import { AdmonSolicitaComponent } from './admon-solicita/admon-solicita.component';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -23,8 +25,9 @@ const routes: Routes = [
   {path: 'cena', component: CenaComponent},
   {path: 'concentrado', component: ConcentradoComponent},
   {path: 'acercade', component: AcercadeComponent},
-  {path: 'admon-admin', component: AdmonAdminComponent}
-];
+  {path: 'admon-admin', component: AdmonAdminComponent},
+  {path: 'admon-solicita', component: AdmonSolicitaComponent}
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

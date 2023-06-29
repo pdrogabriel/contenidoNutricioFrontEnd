@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-admon-admin',
-  templateUrl: './admon-admin.component.html',
-  styleUrls: ['./admon-admin.component.css']
+  selector: 'app-admon-solicita',
+  templateUrl: './admon-solicita.component.html',
+  styleUrls: ['./admon-solicita.component.css']
 })
-export class AdmonAdminComponent implements OnInit {
-  //active = 1;
+export class AdmonSolicitaComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 
   // Silviana: Función dónde se borra la fila del botón presionado
   eliminarFila(index: Number) {

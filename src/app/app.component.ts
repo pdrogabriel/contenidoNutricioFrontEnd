@@ -23,6 +23,4 @@ saveData() {
     sessionStorage.setItem('name', 'Rana Hasnain');
 }
 
-
-
 }
