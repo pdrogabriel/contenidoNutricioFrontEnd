@@ -1,168 +1,181 @@
+<!--
+    Directora del proyecto: Sabina López Toledo                               
+    Coordinadora y Desarrolladora: Silviana Juárez Chalini                    
+    Desarrollador: Rolando Pedro Gabriel                                      
+    Fecha de Creación: 22/04/2022                                              
+    Fecha de Actualización: 12/07/2023                                         
+-->
+
 <!-- Page Wrapper -->
 <div id="wrapper">
-  <!-- Sidebar -->
-  <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+	<!-- Sidebar -->
+	<ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/home-controller">
-      <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-laugh-wink"></i>
+		<!-- Sidebar - Brand -->
+		<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/home-controller">
+			<div class="sidebar-brand-icon rotate-n-15">
+				<i class="fas fa-laugh-wink"></i>
 
-      </div>
-      <div class="sidebar-brand-text mx-2">C&Aacute;LCULO NUTRICIO*</div>
-    </a>
+			</div>
+			<div class="sidebar-brand-text mx-2">C&Aacute;LCULO NUTRICIO*</div>
+		</a>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider bg-white my-0">
-
-
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Nav Item - Tables 
-    <li class="nav-item">
-      <a class="nav-link " href="/home">
-        <i class="fas fa-fw fa-home"></i>
-        <span>Log in</span></a>
-    </li>
--->
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-      <a class="nav-link " href="/tiempocomida">
-        <i class="fas fa-fw fa-home"></i>
-        <span>Tiempos de Comida</span></a>
-    </li>
+		<!-- Divider -->
+		<hr class="sidebar-divider bg-white my-0">
 
 
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-      <a class="nav-link" href="/desayuno">
-        <i class="fas fa-fw fa-check-circle"></i>
-        <span>Desayuno</span></a>
-    </li>
 
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-      <a class="nav-link" href="/colacion-matutina">
-        <i class="fas fa-fw fa-bars"></i>
-        <span>Colaci&oacute;n matutina</span></a>
-    </li>
+		<!-- Divider -->
+		<hr class="sidebar-divider">
 
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-      <a class="nav-link" href="/comida">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Comida</span></a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-      <a class="nav-link" href="/colacion-vespertina">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Colaci&oacute;n vespertina</span></a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-      <a class="nav-link" href="/cena">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Cena</span></a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-      <a class="nav-link" href="/concentrado">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Análisis de la Ingesta</span></a>
-    </li>
+		<!-- Nav Item - Tables 
+	  <li class="nav-item">
+		<a class="nav-link " href="/home">
+		  <i class="fas fa-fw fa-home"></i>
+		  <span>Log in</span></a>
+	  </li>
+  -->
+		<!-- Nav Item - Tables -->
+		<li class="nav-item">
+			<a class="nav-link " href="/tiempocomida" *ngIf="isLoggedIn && isActive">
+				<i class="fas fa-fw fa-home"></i>
+				<span>Tiempos de Comida</span></a>
+		</li>
 
 
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-      <a class="nav-link" href="/acercade">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Acerca de</span></a>
-    </li>
+		<!-- Nav Item - Charts -->
+		<li class="nav-item">
+			<a class="nav-link" href="/desayuno" *ngIf="isLoggedIn && isActive">
+				<i class="fas fa-fw fa-check-circle"></i>
+				<span>Desayuno</span></a>
+		</li>
 
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-      <a class="nav-link" href="/usuario">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Login</span></a>
-    </li>
+		<!-- Nav Item - Tables -->
+		<li class="nav-item">
+			<a class="nav-link" href="/colacion-matutina" *ngIf="isLoggedIn && isActive">
+				<i class="fas fa-fw fa-bars"></i>
+				<span>Colaci&oacute;n matutina</span></a>
+		</li>
 
-<!-- Silviana:  Enlace a la interfaz de administracion-->
-<li class="nav-item">
-  <a class="nav-link" href="/admon-admin">
-    <i class="fas fa-fw fa-table"></i>
-    <span>Administracion de usuarios</span></a>
-</li>
+		<!-- Nav Item - Tables -->
+		<li class="nav-item">
+			<a class="nav-link" href="/comida" *ngIf="isLoggedIn && isActive">
+				<i class="fas fa-fw fa-table"></i>
+				<span>Comida</span></a>
+		</li>
 
-<!-- Silviana:  Enlace a la interfaz de solicitudes de usuarios-->
-<li class="nav-item">
-  <a class="nav-link" href="/admon-solicita">
-    <i class="fas fa-fw fa-table"></i>
-    <span>Administracion de solicitudes</span></a>
-</li>
+		<!-- Nav Item - Tables -->
+		<li class="nav-item">
+			<a class="nav-link" href="/colacion-vespertina" *ngIf="isLoggedIn && isActive">
+				<i class="fas fa-fw fa-table"></i>
+				<span>Colaci&oacute;n vespertina</span></a>
+		</li>
 
+		<!-- Nav Item - Tables -->
+		<li class="nav-item">
+			<a class="nav-link" href="/cena" *ngIf="isLoggedIn && isActive">
+				<i class="fas fa-fw fa-table"></i>
+				<span>Cena</span></a>
+		</li>
 
-  </ul>
-  <!-- End of Sidebar -->
-
-  <!-- Content Wrapper -->
-  <div id="content-wrapper" class="d-flex flex-column bg-white">
-
-    <!-- Main Content -->
-    <div id="content">
-
-      <div class="container px-4 px-lg-5">
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container px-4">
-
-            <img class="img-fluid rounded float-left" width="80"  height="80" src="../../assets/images/unsis-logo.png" alt="..." />
-
-            <a class="navbar-brand" href="#!">A N A M E X</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">Tiempos de Comida</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">Análisis de la Ingesta</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">Acerca de</a></li>
-
-                <li class="nav-item">
-                  <a href class="nav-link" (click)="logout()">Salir</a>
-                </li>
-
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
+		<!-- Nav Item - Tables -->
+		<li class="nav-item">
+			<a class="nav-link" href="/concentrado" *ngIf="isLoggedIn && isActive">
+				<i class="fas fa-fw fa-table"></i>
+				<span>Análisis de la Ingesta</span></a>
+		</li>
 
 
-      <div class="container-fluid bg-white">
-        <router-outlet></router-outlet>
-      </div>
+		<!-- Nav Item - Tables -->
+		<li class="nav-item">
+			<a class="nav-link" href="/acercade">
+				<i class="fas fa-fw fa-table"></i>
+				<span>Acerca de</span></a>
+		</li>
 
-      <div class="container px-4 px-lg-5">
-        <!-- Footer-->
-        <footer class="py-5 bg-light">
-          <div class="container px-4 px-lg-5">
-            <p class="m-0 text-center text-black">Copyright &copy; Your Website 2022</p>
-          </div>
-        </footer>
-      </div>
 
-    </div>
-    <!-- End of Main Content -->
 
-  </div>
-  <!-- End of Content Wrapper -->
+		<!-- Silviana:  Enlace a la interfaz de solicitudes de usuarios-->
+		<li class="nav-item">
+			<a class="nav-link" href="/admon-solicita" *ngIf="isLoggedIn && isAvailable && isActive">
+				<i class="fas fa-fw fa-table"></i>
+				<span>Administracion de solicitudes</span></a>
+		</li>
+
+
+		<!-- Nav Item - Tables -->
+		<li class="nav-item">
+			<a class="nav-link" href="/login">
+				<i class="fas fa-fw fa-table"></i>
+				<span>Login</span></a>
+		</li>
+
+		<!-- Nav Item - Tables -->
+		<li class="nav-item">
+			<a class="nav-link" href="/registrar">
+				<i class="fas fa-fw fa-table"></i>
+				<span>Registrar</span></a>
+		</li>
+
+	</ul>
+	<!-- End of Sidebar -->
+
+	<!-- Content Wrapper -->
+	<div id="content-wrapper" class="d-flex flex-column bg-white">
+
+		<!-- Main Content -->
+		<div id="content">
+
+			<!--<div class="container px-4 px-lg-5">--> <!-- Reducir el tamaño del contenido-->
+			<!-- Responsive navbar-->
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container px-4">
+
+					<img class="img-fluid rounded float-left" width="80" height="80"
+						src="../../assets/images/unsis-logo.png" alt="..." />
+
+					<a class="navbar-brand" href="#!">A N A M E X</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation"><span
+							class="navbar-toggler-icon"></span></button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+							<li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a>
+							</li>
+							<li class="nav-item"><a class="nav-link" href="#!">Tiempos de Comida</a></li>
+							<li class="nav-item"><a class="nav-link" href="#!">Análisis de la Ingesta</a></li>
+							<li class="nav-item"><a class="nav-link" href="#!">Acerca de</a></li>
+
+							<li class="nav-item">
+								<a href class="nav-link" (click)="logout()">Salir</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!--</div>--> <!-- Reducir el tamaño del contenido-->
+
+			<div class="container-fluid bg-white">
+				<router-outlet></router-outlet>
+			</div>
+
+		</div>
+		<!-- End of Main Content -->
+		<!--<div class="container px-4 px-lg-5">--> <!-- Reducir el tamaño del contenido-->
+		<!-- Footer-->
+		<footer class="py-5 bg-light">
+			<div class="container px-4 px-lg-5">
+				<p class="m-0 text-center text-black">Copyright &copy; Contenido Nutricio 2022</p>
+			</div>
+		</footer>
+		<!--</div>--> <!-- Reducir el tamaño del contenido-->
+
+	</div>
+	<!-- End of Content Wrapper -->
+
+
 
 </div>
 <!-- End of Page Wrapper -->

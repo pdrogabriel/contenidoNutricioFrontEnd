@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const url = 'http://localhost:8080/calculo/usuario/';
+const url = 'http://localhost:8080/api/auth/';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -19,7 +19,7 @@ export class UsuarioService {
     return this.http.post(`${url}` + 'signin', {username, password}, httpOptions);
   }
 
-  createUsuario(data: any): Observable<any> {
+  createUsuario(data: Object): Observable<Object> {
     return this.http.post(`${url}` + 'signup', data, httpOptions);
   }
 

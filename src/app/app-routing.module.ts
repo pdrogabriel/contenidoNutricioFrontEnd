@@ -1,4 +1,14 @@
-import { Component, NgModule } from '@angular/core';
+/******************************************************************************
+ * @Directora del proyecto: Sabina López Toledo                               *
+ * @Coordinadora y Desarrolladora: Silviana Juárez Chalini                    *
+ * @Desarrollador: Rolando Pedro Gabriel                                      *
+ * Fecha de Creación: 22/04/2022                                              *
+ * Fecha de Actualización: 11/07/2023                                         *
+ * Descripción: Clase principal del proyecto Contenido Nutricio Front-End,    *
+ *              se integran las diferentes rutas del proyecto.                *
+ *****************************************************************************/
+
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CenaComponent } from './cena/cena.component';
 import { ColacionmatutinaComponent } from './colacionmatutina/colacionmatutina.component';
@@ -8,15 +18,14 @@ import { ConcentradoComponent } from './concentrado/concentrado.component';
 import { DesayunoComponent } from './desayuno/desayuno.component';
 import { HomeComponent } from './home/home.component';
 import { TiempocomidaComponent } from './tiempocomida/tiempocomida.component';
-import { UsuarioComponent } from './usuario/usuario/usuario.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 import { AcercadeComponent } from './acercade/acercade.component';
-import { AdmonAdminComponent } from './admon-admin/admon-admin.component';
 import { AdmonSolicitaComponent } from './admon-solicita/admon-solicita.component';
-
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'usuario', component: UsuarioComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'tiempocomida', component: TiempocomidaComponent},
   {path: 'desayuno', component: DesayunoComponent},
   {path: 'colacion-matutina', component: ColacionmatutinaComponent},
@@ -25,8 +34,8 @@ const routes: Routes = [
   {path: 'cena', component: CenaComponent},
   {path: 'concentrado', component: ConcentradoComponent},
   {path: 'acercade', component: AcercadeComponent},
-  {path: 'admon-admin', component: AdmonAdminComponent},
-  {path: 'admon-solicita', component: AdmonSolicitaComponent}
+  {path: 'admon-solicita', component: AdmonSolicitaComponent},
+  { path: 'registrar', component: UsuarioComponent },
   ];
 
 @NgModule({

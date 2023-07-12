@@ -1,11 +1,20 @@
+/******************************************************************************
+ * @Directora del proyecto: Sabina López Toledo                               *
+ * @Coordinadora y Desarrolladora: Silviana Juárez Chalini                    *
+ * @Desarrollador: Rolando Pedro Gabriel                                      *
+ * Fecha de Creación: 22/04/2022                                              *
+ * Fecha de Actualización: 11/07/2023                                         *
+ * Descripción: Clase principal del proyecto Contenido Nutricio Front-End,    *
+ *              se integran los diferentes módulos desarrollados como módulos *
+ *              necesarios para la ejecución del sistema.                     *
+ *****************************************************************************/
+
+import {DataTablesModule} from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { DesayunoComponent } from './desayuno/desayuno.component';
 import { ColacionmatutinaComponent } from './colacionmatutina/colacionmatutina.component';
 import { ComidaComponent } from './comida/comida.component';
@@ -16,11 +25,10 @@ import { ConcentradoComponent } from './concentrado/concentrado.component';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { TiempocomidaComponent } from './tiempocomida/tiempocomida.component';
-import { UsuarioComponent } from './usuario/usuario/usuario.component';
-import { AdmonAdminComponent } from './admon-admin/admon-admin.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 import { AcercadeComponent } from './acercade/acercade.component';
+import { LoginComponent } from './login/login.component';
 import { AdmonSolicitaComponent } from './admon-solicita/admon-solicita.component';
-
 
 @NgModule({
   declarations: [
@@ -35,18 +43,19 @@ import { AdmonSolicitaComponent } from './admon-solicita/admon-solicita.componen
     TiempocomidaComponent,
     UsuarioComponent,
     UsuarioComponent,
-    AdmonAdminComponent,
     AcercadeComponent,
-    AdmonSolicitaComponent,
+    LoginComponent,
+    AdmonSolicitaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    DataTablesModule,
     HttpClientModule,
     BrowserModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
