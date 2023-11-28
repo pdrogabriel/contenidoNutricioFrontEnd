@@ -135,7 +135,15 @@ sumaTotal: Number[] = [];
     if (sessionStorage.getItem("sumaTableCena")!=null)
     this.cenaSumaTabla=JSON.parse(sessionStorage.getItem("sumaTableCena")||"");
 
-      sessionStorage.clear();
+     // sessionStorage.clear();
+     for (let i = 0; i < 25; i++)
+     {   
+        if (this.desayunoSumaTabla[i]==null) this.desayunoSumaTabla[i]=0;  
+        if (this.colacionMatutinaTabla[i]==null) this.colacionMatutinaSumaTabla[i]=0;  
+        if (this.comidaSumaTabla[i]==null) this.comidaSumaTabla[i]=0; 
+        if (this.colacionVespertinaTabla[i]==null) this.colacionVespertinaSumaTabla[i]=0;  
+        if (this.cenaSumaTabla[i]==null) this.cenaSumaTabla[i]=0;  
+     }
 
       for (let i = 0; i < 25; i++)
       {
@@ -147,8 +155,10 @@ sumaTotal: Number[] = [];
 
   //Importar a Excel
   exportToExcel(): void {
-    this.nameFile = 'analisisIngesta.xlsx';
-    if ("nombreArchivo" in sessionStorage) {
+
+    //alert("archivo: "+sessionStorage.getItem('nombreArchivo'));
+    this.nameFile = 'analisisIngesta.xlsx';    
+    if ('nombreArchivo' in sessionStorage) {
       this.nameFile = (sessionStorage.getItem('nombreArchivo')||"analisisIngesta.xlsx");
   } 
     let element = document.getElementById('analisisIngesta-tble');
@@ -157,6 +167,4 @@ sumaTotal: Number[] = [];
     XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
     XLSX.writeFile(book, this.nameFile);
   }
-
-
 }

@@ -82,7 +82,6 @@ export class DesayunoComponent implements OnInit {
   }
 
   obtenerAlimentos(grupoAlimentoId: Number): void {
-
     this.grupoAlimentoService.getAlimentoByGrupoAlimento(grupoAlimentoId)
       .subscribe(
         data => {
@@ -111,14 +110,13 @@ export class DesayunoComponent implements OnInit {
   }
 
   obtenerAlimentoNutrientes(idAlimento: Number): void {
-
     this.grupoAlimentoService.getAlimentoNutrientes(idAlimento)
+    
       .subscribe(
         data => {
           this.alimentoNutrientes = data;
           // Rolando: se realiza una copia del arreglo alimentoNutrientes
           this.alimentoNutrientesCopia = JSON.parse(JSON.stringify(this.alimentoNutrientes));
-          return data
         },
         error => {
           console.log(error);
@@ -129,7 +127,6 @@ export class DesayunoComponent implements OnInit {
   calcularNutriente() {
     // Rolando: se realiza una copia del arreglo alimentoNutrientes
     this.alimentoNutrientes = JSON.parse(JSON.stringify(this.alimentoNutrientesCopia));
-
     console.log(this.proporcion)
     for (let x = 0; x < this.alimentoNutrientes.length; x++) {
       this.alimentoNutrientes[x].cantidad = (this.alimentoNutrientes[x].cantidad * this.proporcion)/Number(this.cantidad);
@@ -140,19 +137,10 @@ export class DesayunoComponent implements OnInit {
     this.proporcion = Number(this.cantidad);
     for (let x = 0; x < this.alimentoNutrientes.length; x++) {
       this.alimentoNutrientes[x].cantidad = (this.alimentoNutrientes[x].cantidad * Number(this.cantidad)) / Number(this.proporcion);
-      //alert(":p "+this.alimentoNutrientesOriginal[x].cantidad);
-      // this.alimentoNutrientes[x].cantidad = this.alimentoNutrientesOriginal[x].cantidad;
-      //this.alimentoNutrientes[x].cantidad = this.alimentoNutrientesOriginal[x];
-      //this.alimentoNutrientes[x].cantidad = 0
-      // this.alimentoNutrientes[x].cantidad=(this.alimentoNutrientes[x].cantidad*this.proporcion)/Number(this.cantidad);
     }
   }
 
-  limpiarNutrientes() {
-    for (let x = 0; x < this.alimentoNutrientes.length; x++) {
-      this.alimentoNutrientes[x].cantidad = 0
-    }
-  }
+ 
 
 
 

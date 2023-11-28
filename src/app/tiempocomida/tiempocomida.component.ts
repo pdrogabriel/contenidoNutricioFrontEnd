@@ -20,7 +20,6 @@ export class TiempocomidaComponent implements OnInit {
     IdentificadorPaciente="analisisIngesta.xlsx";
   }else{
     let nombreLimpio;
-    // replace() usando una expresión Regex para reemplazar espacios en blanco
       nombreLimpio = element+"";
       nombreLimpio= nombreLimpio.replace(/\s+/g, '');
       nombreLimpio= nombreLimpio.replace('á', 'a');
@@ -29,10 +28,12 @@ export class TiempocomidaComponent implements OnInit {
       nombreLimpio= nombreLimpio.replace('ó', 'o');
       nombreLimpio= nombreLimpio.replace('ú', 'u');
       nombreLimpio= nombreLimpio.replace('ñ', 'n');
-      IdentificadorPaciente=JSON.stringify(nombreLimpio)+".xlsx"; 
+      let ext:string = ".xlsx"
+      IdentificadorPaciente=nombreLimpio+ext; 
   }
   // Se envía al almacenamiento local
-  sessionStorage.setItem("nombreArchivo",IdentificadorPaciente);
-  alert("Identificador del paciente registrado");
+  sessionStorage.setItem('nombreArchivo',IdentificadorPaciente);
+  //alert("archivo: "+sessionStorage.getItem('nombreArchivo'));
+   alert("Identificador del paciente registrado");
   }
 }

@@ -8,117 +8,9 @@
 
 <!-- Page Wrapper -->
 <div id="wrapper">
-	<!-- Sidebar -->
-	<ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-		<!-- Sidebar - Brand -->
-		<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/home-controller">
-			<div class="sidebar-brand-icon rotate-n-15">
-				<i class="fas fa-laugh-wink"></i>
-
-			</div>
-			<div class="sidebar-brand-text mx-2">C&Aacute;LCULO NUTRICIO*</div>
-		</a>
-
-		<!-- Divider -->
-		<hr class="sidebar-divider bg-white my-0">
-
-
-
-		<!-- Divider -->
-		<hr class="sidebar-divider">
-
-		<!-- Nav Item - Tables 
-	  <li class="nav-item">
-		<a class="nav-link " href="/home">
-		  <i class="fas fa-fw fa-home"></i>
-		  <span>Log in</span></a>
-	  </li>
-  -->
-		<!-- Nav Item - Tables -->
-		<li class="nav-item">
-			<a class="nav-link " href="/tiempocomida" *ngIf="isLoggedIn && isActive">
-				<i class="fas fa-fw fa-home"></i>
-				<span>Tiempos de Comida</span></a>
-		</li>
-
-
-		<!-- Nav Item - Charts -->
-		<li class="nav-item">
-			<a class="nav-link" href="/desayuno" *ngIf="isLoggedIn && isActive">
-				<i class="fas fa-fw fa-check-circle"></i>
-				<span>Desayuno</span></a>
-		</li>
-
-		<!-- Nav Item - Tables -->
-		<li class="nav-item">
-			<a class="nav-link" href="/colacion-matutina" *ngIf="isLoggedIn && isActive">
-				<i class="fas fa-fw fa-bars"></i>
-				<span>Colaci&oacute;n matutina</span></a>
-		</li>
-
-		<!-- Nav Item - Tables -->
-		<li class="nav-item">
-			<a class="nav-link" href="/comida" *ngIf="isLoggedIn && isActive">
-				<i class="fas fa-fw fa-table"></i>
-				<span>Comida</span></a>
-		</li>
-
-		<!-- Nav Item - Tables -->
-		<li class="nav-item">
-			<a class="nav-link" href="/colacion-vespertina" *ngIf="isLoggedIn && isActive">
-				<i class="fas fa-fw fa-table"></i>
-				<span>Colaci&oacute;n vespertina</span></a>
-		</li>
-
-		<!-- Nav Item - Tables -->
-		<li class="nav-item">
-			<a class="nav-link" href="/cena" *ngIf="isLoggedIn && isActive">
-				<i class="fas fa-fw fa-table"></i>
-				<span>Cena</span></a>
-		</li>
-
-		<!-- Nav Item - Tables -->
-		<li class="nav-item">
-			<a class="nav-link" href="/concentrado" *ngIf="isLoggedIn && isActive">
-				<i class="fas fa-fw fa-table"></i>
-				<span>Análisis de la Ingesta</span></a>
-		</li>
-
-
-		<!-- Nav Item - Tables -->
-		<li class="nav-item">
-			<a class="nav-link" href="/acercade">
-				<i class="fas fa-fw fa-table"></i>
-				<span>Acerca de</span></a>
-		</li>
-
-
-
-		<!-- Silviana:  Enlace a la interfaz de solicitudes de usuarios-->
-		<li class="nav-item">
-			<a class="nav-link" href="/admon-solicita" *ngIf="isLoggedIn && isAvailable && isActive">
-				<i class="fas fa-fw fa-table"></i>
-				<span>Administracion de solicitudes</span></a>
-		</li>
-
-
-		<!-- Nav Item - Tables -->
-		<li class="nav-item">
-			<a class="nav-link" href="/login">
-				<i class="fas fa-fw fa-table"></i>
-				<span>Login</span></a>
-		</li>
-
-		<!-- Nav Item - Tables -->
-		<li class="nav-item">
-			<a class="nav-link" href="/registrar">
-				<i class="fas fa-fw fa-table"></i>
-				<span>Registrar</span></a>
-		</li>
-
-	</ul>
-	<!-- End of Sidebar -->
+<!-- Sidebar -->
+<!-- End of Sidebar -->
 
 	<!-- Content Wrapper -->
 	<div id="content-wrapper" class="d-flex flex-column bg-white">
@@ -127,7 +19,7 @@
 		<div id="content">
 
 			<!--<div class="container px-4 px-lg-5">--> <!-- Reducir el tamaño del contenido-->
-			<!-- Responsive navbar-->
+			<!-- Silviana: Menú superior principal-->
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div class="container px-4">
 
@@ -141,14 +33,13 @@
 							class="navbar-toggler-icon"></span></button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-							<li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a>
+							<li class="nav-item"><a class="nav-link active" aria-current="page" href="/login">Inicio</a>
 							</li>
-							<li class="nav-item"><a class="nav-link" href="#!">Tiempos de Comida</a></li>
-							<li class="nav-item"><a class="nav-link" href="#!">Análisis de la Ingesta</a></li>
-							<li class="nav-item"><a class="nav-link" href="#!">Acerca de</a></li>
-
-							<li class="nav-item">
-								<a href class="nav-link" (click)="logout()">Salir</a>
+							<li class="nav-item"><a class="nav-link " href="/tiempocomida" *ngIf="isLoggedIn && isActive">Tiempos de Comida</a></li>
+							<li class="nav-item"><a class="nav-link" href="/concentrado" *ngIf="isLoggedIn && isActive">An&aacute;lisis de la Ingesta</a></li>
+							<li class="nav-item"><a class="nav-link" href="/admon-solicita" *ngIf="isLoggedIn && isAvailable && isActive">Administraci&oacute;n solicitudes</a></li>
+							<li class="nav-item"><a class="nav-link" href="/acercade">Acerca de</a></li>
+							<li class="nav-item"><a href class="nav-link" (click)="logout()">Salir</a>
 							</li>
 
 						</ul>
@@ -174,8 +65,6 @@
 
 	</div>
 	<!-- End of Content Wrapper -->
-
-
 
 </div>
 <!-- End of Page Wrapper -->
