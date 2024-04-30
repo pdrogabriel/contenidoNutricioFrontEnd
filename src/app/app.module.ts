@@ -29,6 +29,7 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { AcercadeComponent } from './acercade/acercade.component';
 import { LoginComponent } from './login/login.component';
 import { AdmonSolicitaComponent } from './admon-solicita/admon-solicita.component';
+import { RouterLink } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { AdmonSolicitaComponent } from './admon-solicita/admon-solicita.componen
     BrowserModule,
     FormsModule,
     MatSelectModule,
+    RouterLink,
   ],
   providers: [],
   bootstrap: [AppComponent]

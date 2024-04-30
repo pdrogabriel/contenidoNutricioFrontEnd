@@ -33,12 +33,15 @@
 							class="navbar-toggler-icon"></span></button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-							<li class="nav-item"><a class="nav-link active" aria-current="page" href="/login">Inicio</a>
+
+						
+
+							<li class="nav-item"><a class="nav-link active" aria-current="page" routerLink="/login">Inicio</a>
 							</li>
-							<li class="nav-item"><a class="nav-link " href="/tiempocomida" *ngIf="isLoggedIn && isActive">Tiempos de Comida</a></li>
-							<li class="nav-item"><a class="nav-link" href="/concentrado" *ngIf="isLoggedIn && isActive">An&aacute;lisis de la Ingesta</a></li>
-							<li class="nav-item"><a class="nav-link" href="/admon-solicita" *ngIf="isLoggedIn && isAvailable && isActive">Administraci&oacute;n solicitudes</a></li>
-							<li class="nav-item"><a class="nav-link" href="/acercade">Acerca de</a></li>
+							<li class="nav-item"><a class="nav-link " routerLink="/tiempocomida" *ngIf="isLoggedIn && isActive">Tiempos de Comida</a></li>
+							<li class="nav-item"><a class="nav-link" routerLink="/concentrado" *ngIf="isLoggedIn && isActive">An&aacute;lisis de la Ingesta</a></li>
+							<li class="nav-item"><a class="nav-link" routerLink="/admon-solicita" *ngIf="isLoggedIn && isAvailable && isActive">Administraci&oacute;n solicitudes</a></li>
+							<li class="nav-item"><a class="nav-link" routerLink="/acercade">Acerca de</a></li>
 							<li class="nav-item"><a href class="nav-link" (click)="logout()">Salir</a>
 							</li>
 

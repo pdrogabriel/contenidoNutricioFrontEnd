@@ -1,36 +1,40 @@
-#### Stage 1: Build the application
-FROM openjdk:11-jdk-slim as build
+#### Stage 1: Build the angular application
+FROM node as build
  
-# Set the current working directory inside the image
+# Configure the main working directory inside the docker image. 
+# This is the base directory used in any further RUN, COPY, and ENTRYPOINT 
+# commands.
 WORKDIR /app
  
-# Copy maven executable to the image
-COPY mvnw .
-COPY .mvn .mvn
+# Copy the package.json as well as the package-lock.json and install 
+# the dependencies. This is a separate step so the dependencies 
+# will be cached unless changes to one of those two files 
+# are made.
+COPY package*.json ./
+RUN npm install
  
-# Copy the pom.xml file
-COPY pom.xml .
+# Copy the main application
+COPY . ./
  
-# Build all the dependencies in preparation to go offline. 
-# This is a separate step so the dependencies will be cached unless 
-# the pom.xml file has changed.
-RUN ./mvnw dependency:go-offline -B
+# Arguments
+ARG configuration=production
  
-# Copy the project source
-COPY src src
+# Build the application
+RUN npm run build -- --outputPath=./dist/out --configuration $configuration
  
-# Package the application
-RUN ./mvnw package -DskipTests
-RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
+#### Stage 2, use the compiled app, ready for production with Nginx
+FROM nginx
  
-#### Stage 2: A minimal docker image with command to run the app 
-FROM openjdk:11-jre-slim
+# Copy the angular build from Stage 1
+COPY --from=build /app/dist/out/ /usr/share/nginx/html
  
-ARG DEPENDENCY=/app/target/dependency
+# Copy our custom nginx config
+COPY /nginx-custom.conf /etc/nginx/conf.d/default.conf
  
-# Copy project dependencies from the build stage
-COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
-COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
-COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
  
-ENTRYPOINT ["java","-cp","app:app/lib/*","com.javachinna.DemoApplication"]
+# Expose port 80 to the Docker host, so we can access it 
+# from the outside.
+EXPOSE 8081
+ 
+ENTRYPOINT ["nginx","-g","daemon off;"]
+

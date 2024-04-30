@@ -1,6 +1,6 @@
 {
-  "name": "contenido-nutricio-front-end",
-  "version": "0.0.0",
+  "name": "anamex",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

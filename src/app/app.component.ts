@@ -16,7 +16,7 @@ import { UsuarioAccesoService } from './services/usuario-acceso.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'contenidoNutricioFrontEnd';
+  title = 'ANAMEX';
 
   isAvailable = false
   isActive = false;

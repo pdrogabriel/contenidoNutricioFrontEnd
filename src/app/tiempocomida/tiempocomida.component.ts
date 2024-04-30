@@ -31,6 +31,11 @@ export class TiempocomidaComponent implements OnInit {
       let ext:string = ".xlsx"
       IdentificadorPaciente=nombreLimpio+ext; 
   }
+
+
+
+
+
   // Se envía al almacenamiento local
   sessionStorage.setItem('nombreArchivo',IdentificadorPaciente);
   //alert("archivo: "+sessionStorage.getItem('nombreArchivo'));
