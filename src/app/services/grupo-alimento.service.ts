@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, isDevMode } from '@angular/core';
 import { Observable } from 'rxjs';
-const url =  isDevMode() ? 'http://localhost:8080/api/usuario/' : 'https://anamexapi.unsis.edu.mx/api/usuario/';
+const url =  isDevMode() ? 'https://anamexapi.unsis.edu.mx/calculo/grupoalimento/' : 'https://anamexapi.unsis.edu.mx/calculo/grupoalimento/';
 
 @Injectable({
   providedIn: 'root'

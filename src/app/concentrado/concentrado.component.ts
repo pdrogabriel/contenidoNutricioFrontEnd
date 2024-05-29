@@ -98,6 +98,7 @@ sumaTotal: Number[] = [];
       this.colacionMatutinaTabla=JSON.parse(sessionStorage.getItem("menuTableColacionMatutina")||"");
     if (sessionStorage.getItem("sumaTableColacionMatutina")!=null)
       this.colacionMatutinaSumaTabla=JSON.parse(sessionStorage.getItem("sumaTableColacionMatutina")||"");
+    console.log(this.colacionMatutinaSumaTabla);
 
       //Silviana: Aquí cachamos el menú de la Comida y su suma
     if (sessionStorage.getItem("arrayComidaNombre")!=null)

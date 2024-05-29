@@ -2,7 +2,7 @@ import { Injectable, isDevMode } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const API_URL =  isDevMode() ? 'http://localhost:8080/api/usuario/' : 'https://anamexapi.unsis.edu.mx/api/usuario/';
+const API_URL =  isDevMode() ? 'https://anamexapi.unsis.edu.mx/api/usuario/' : 'https://anamexapi.unsis.edu.mx/api/usuario/';
 
 @Injectable({
   providedIn: 'root'

@@ -4,7 +4,7 @@ import { Injectable, isDevMode } from '@angular/core';
 import { Observable } from 'rxjs';
 
 //const url = 'http://localhost:8080/api/usuario/'; //cambiar por el nuevo dominio
-const url =  isDevMode() ? 'http://localhost:8080/api/usuario/' : 'https://anamexapi.unsis.edu.mx/api/usuario/';
+const url =  isDevMode() ? 'https://anamexapi.unsis.edu.mx/api/usuario/' : 'https://anamexapi.unsis.edu.mx/api/usuario/';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
